@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Test avec Ant" default="run_jarFile" basedir=".">
+   
+  
+	<property name="dist"    location="E:\workspace\workspace\GSR_NEWSVN\SINISTREAT_Appli_EVO\target"/>
+	<property name="classes" location="E:\workspace\workspace\GSR_NEWSVN\SINISTREAT_Appli_EVO\target\classes"/>
+	<property name="classesCOMMUN" location="E:\workspace\workspace\GSR_NEWSVN\SINISTREAT_COMMUN_EVO\target\classes"/>
+	
+	<!-- =================================================================== -->
+  <!-- Génération de l'archive jar                           -->
+  <!-- =================================================================== -->
+  <target name="sinistreATservice">
+  	<jar destfile="${dist}/sinistreAT-modeleVO.jar">
+  		
+  		<fileset dir="${classes}" 
+		 	includes="eai/devass/gsr/appli/valueobjects/**  		 		
+  					eai/devass/gsr/appli/service/pub/**
+		  		 	eai/devass/sinistreat/appli/valueobjects/**
+  					eai/devass/sinistreat/appli/services/IComplementQuittanceService**
+  					eai/devass/sinistreat/appli/services/pub/**" />
+  		
+  		<fileset dir="${classesCOMMUN}" 
+  				 	includes="eai/devass/commun/appli/converter/AConverter** " />
+  		
+  		
+  		
+  	</jar>
+  	
+  </target>
+	
+  <target name="run_jarFile" depends="sinistreATservice"/>
+	
+</project>

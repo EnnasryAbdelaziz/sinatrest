@@ -1,0 +1,46 @@
+package eai.devass.gsr.appli.usecase.parametrage;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ma.co.omnidata.framework.services.businessInterface.ValidationException;
+import ma.co.omnidata.framework.services.businessInterface.impl.RechListeVOConverter;
+import eai.devass.gsr.appli.modele.parametrage.NatureQtcGsr;
+import eai.devass.gsr.appli.valueobjects.parametrage.NatureQtcGsrVO;
+import eai.devass.gsr.appli.valueobjects.parametrage.NatureQtcGsrVOConverter;
+
+/**
+Converter du use case de recherche
+@author Nom Prenom (email)
+*/
+
+public class NatureQtcGsrRechercherUCConverter extends RechListeVOConverter {
+
+
+	NatureQtcGsrVOConverter natureQuittanceVOConverter = new NatureQtcGsrVOConverter();
+/**
+Methode qui convertit une entité à un Value Object
+@param item entité à convertir
+@returns Value Object resultat  converti
+*/	
+	protected Object convertItemtoVOItem(Object item) {
+		NatureQtcGsrVO vo = new NatureQtcGsrVO();
+		natureQuittanceVOConverter.itemToVo(vo, (NatureQtcGsr)item, null);
+		return vo;
+	}
+/**
+Methode qui convertit un Value Object à une liste d' entités
+@param ovo value object à convertir
+@returns Listes des entités resultats convertis
+@throws ValidationException Probleme lors de la validation unitaire d' une entité
+*/			
+	public List<NatureQtcGsr> convertValueObjectToItems(Object ovo) throws ValidationException {
+		NatureQtcGsrVO vo = (NatureQtcGsrVO) ovo;
+		NatureQtcGsr item = new NatureQtcGsr();
+		natureQuittanceVOConverter.voToItem(vo,item);
+		List<NatureQtcGsr> res = new ArrayList<NatureQtcGsr>();
+		res.add(item);
+		return res;
+	}
+
+}
