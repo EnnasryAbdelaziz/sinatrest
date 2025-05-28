@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: vendredi 1 octobre 2010 11:41:13 -->
+
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.recoursentrant.application.authentification" >
+	<class name="Profil" table="PRM_PROFIL" >
+      <id name="code" column="CODE">
+         <generator class="assigned" />
+      </id>
+      <property name="libelle" >
+         <column name="LIBELLE" />
+      </property>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,102 @@
+CREATE TABLE SIN_TEMPLATE(
+id NUMBER(8) not null,
+description VARCHAR2(1000) ,
+fichier_template blob  ,
+
+CONSTRAINT PK_SIN_TEMPLATE PRIMARY KEY (id)
+);
+
+CREATE TABLE SIN_ENTETE(
+id NUMBER(8) not null,
+sous_titre VARCHAR2(1000) ,
+
+CONSTRAINT PK_SIN_ENTETE PRIMARY KEY (id)
+);
+
+
+CREATE TABLE SIN_LIGNE_TITRE(
+id NUMBER(8) not null,
+libelle VARCHAR2(250) ,
+is_dynamique char(1),
+id_sin_entete number(8),
+
+CONSTRAINT PK_SIN_LIGNE_TITRE PRIMARY KEY (id),
+CONSTRAINT FK_SIN_LIGNE_TITRE_ENTETE FOREIGN KEY (id_sin_entete) REFERENCES SIN_ENTETE(id)
+);
+
+
+CREATE TABLE SIN_RECAP(
+id NUMBER(8) not null,
+type_fille varchar2(250),
+description varchar2(250),
+
+CONSTRAINT PK_SIN_RECAP PRIMARY KEY (id)
+);
+
+
+CREATE TABLE SIN_RAPPORT(
+id NUMBER(8) not null,
+code varchar2(250) not null,
+description varchar2(500),
+requete_sql VARCHAR2(4000) ,
+id_sin_template NUMBER(8),
+id_sin_entete NUMBER(8),
+id_sin_recap_page NUMBER(8),
+id_sin_recap_generale NUMBER(8),
+
+CONSTRAINT PK_SIN_RAPPORT PRIMARY KEY (id),
+CONSTRAINT FK_SIN_RAPPORT_ENTETE FOREIGN KEY (id_sin_entete ) REFERENCES SIN_ENTETE(id),
+CONSTRAINT FK_SIN_RAPPORT_RECAP_PAGE FOREIGN KEY (id_sin_recap_page) REFERENCES SIN_RECAP(id),
+CONSTRAINT FK_SIN_RAPPORT_RECAP FOREIGN KEY (id_sin_recap_generale) REFERENCES SIN_RECAP(id)
+);
+
+CREATE TABLE SIN_GROUP_BY(
+id NUMBER(8) not null,
+name varchar2(250),
+groupby_expression VARCHAR2(250) ,
+avec_colonnes_in_header char(1),
+ordre_affichage NUMBER(2),
+id_sin_rapport NUMBER(8)  not null,
+
+CONSTRAINT PK_SIN_GROUP_BY PRIMARY KEY (id),
+CONSTRAINT FK_SIN_GROUP_BY_RAPPORT FOREIGN KEY (id_sin_rapport) REFERENCES SIN_RAPPORT(id)
+);
+
+
+CREATE TABLE SIN_RAPPORT_ELEMENT(
+id NUMBER(8) not null,
+type_fille VARCHAR2(50) ,
+name VARCHAR2(250) ,
+type VARCHAR2(250) ,
+libelle VARCHAR2(250),
+pattern VARCHAR2(50),
+text_alignment VARCHAR2(50),
+width NUMBER(4), 
+calculation VARCHAR2(250), 
+variable_expression VARCHAR2(250),
+ordre_affichage NUMBER(2),
+id_sin_entete  NUMBER(8),
+id_sin_rapport NUMBER(8),
+id_sin_group_by NUMBER(8),
+id_sin_recap NUMBER(8),
+
+CONSTRAINT PK_SIN_RAPPORT_ELT PRIMARY KEY (id),
+CONSTRAINT FK_SIN_RAPPORT_ELT_ENTETE FOREIGN KEY (id_sin_entete) REFERENCES SIN_ENTETE(id),
+CONSTRAINT FK_SIN_RAPPORT_ELT_RAPPORT FOREIGN KEY (id_sin_rapport) REFERENCES SIN_RAPPORT(id),
+CONSTRAINT FK_SIN_RAPPORT_ELT_GROUP_BY FOREIGN KEY (id_sin_group_by) REFERENCES SIN_GROUP_BY(id),
+CONSTRAINT FK_SIN_RAPPORT_ELT_REC_PAGE FOREIGN KEY (id_sin_recap) REFERENCES SIN_RECAP(id)
+);
+
+
+CREATE TABLE SIN_RECAP_COLONNE(
+id NUMBER(8) not null,
+name VARCHAR2(250) ,
+calculation VARCHAR2(20) ,
+id_sin_recap NUMBER(8) not null,
+id_champ NUMBER(8),
+
+
+CONSTRAINT PK_SIN_RECAP_COLONNE PRIMARY KEY (id),
+CONSTRAINT FK_SIN_RECAP_COL_RECAP_PAGE FOREIGN KEY (id_sin_recap) REFERENCES SIN_RECAP(id),
+CONSTRAINT FK_SIN_RECAP_COL_CHAMP FOREIGN KEY (id_champ ) REFERENCES SIN_RAPPORT_ELEMENT(id)
+);

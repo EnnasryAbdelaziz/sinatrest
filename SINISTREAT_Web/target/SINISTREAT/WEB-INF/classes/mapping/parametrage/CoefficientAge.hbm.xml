@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 sept. 2009 15:38:55 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="eai.devass.sinistreat.appli.modele.parametrage.CoefficientAge" table="PRM_COEFFICIENT">
+		<id name="id" type="long">
+			<column name="ID" precision="22" scale="0" />
+			<generator class="increment" />
+		</id>
+	      <property name="age" >
+	         <column name="AGE" />
+	         <!--
+	         <generator class="assigned" />
+	      -->
+	      </property>
+        <property name="coefficient" >
+            <column name="COEFFICIENT"  />
+        </property>        
+        <property name="type" >
+            <column name="TYPE"  />
+        </property>           
+    </class>
+</hibernate-mapping>

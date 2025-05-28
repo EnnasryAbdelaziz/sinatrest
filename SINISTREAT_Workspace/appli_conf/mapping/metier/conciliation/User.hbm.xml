@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="eai.devass.sinistreat.appli.modele.metier.conciliation.User"
+		table="ORD_USER">
+		<id name="id">
+			<column name="ID" />
+			<generator class="assigned" />
+		</id>
+		<property name="nom">
+			<column name="NOM" />
+		</property>
+		<property name="prenom">
+			<column name="PRENOM" />
+		</property>
+		<property name="codeSas">
+			<column name="CODESAS" />
+		</property>
+		<property name="isSuperieur">
+			<column name="IS_SUPERIEUR" />
+		</property>
+		<property name="seuilOperation">
+			<column name="SEUILOPERATION" />
+		</property>
+		<bag name="listUserDelegation" inverse="true" cascade="all"
+			order-by="ID asc">
+			<key column="USE_ID" />
+			<one-to-many
+				class="eai.devass.sinistreat.appli.modele.metier.conciliation.UserDelegation" />
+		</bag>
+	</class>
+</hibernate-mapping>

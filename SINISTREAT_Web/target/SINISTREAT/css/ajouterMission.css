@@ -1,0 +1,31 @@
+.backgroundWhite{
+background: white!important;
+}
+.lightBlue {
+	color: #2779AA;
+}
+.lightBlue span{
+cursor:pointer;
+}
+
+/******************Specific to ajoutermission******************/
+.ajouterMissionTable tbody td{
+padding-left: 10px;
+}
+.ajouterMissionTable{
+font-family: Arial,Verdana,Helvetica,sans-serif;
+}
+.seperator {
+	height: 20px;
+}
+#ajouterMissionDiv input, select, textarea{
+width: 150px;
+}
+
+.ajouterMissionTable tbody tr{
+line-height: 28px;
+}
+.ajouterMissionTable tbody{
+margin-top:10px;
+}
+

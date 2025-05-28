@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Mossâb -->
+<!-- Create: jeudi 4 juin 2013 14:30-->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.gsr.appli.modele.metier.dossierRente">
+	<class name="DossierRenteHisto" table="GSR_RENTE_H">
+		<id name="id" >
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_RENTE_H</param>
+			</generator>
+		</id>
+		<property name="idRente" column="gsr_rente" />
+		<property name="compagnieRente" column="compagnie_rente" />
+		<property name="numeroRente" column="numero_rente" />
+		<property name="idDossierRente" column="id_dossier_rente" />
+		<property name="etat" column="etat" />
+		<property name="dateEtat" column="date_etat" />
+		<property name="dateValidation" column="date_validation" />
+		<property name="validation" column="validation" />
+		<property name="dateCreation" column="date_creation" />
+		<property name="userSasCreateur" column="USERSAS_CREATEUR" />
+		<property name="userSasModificateur" column="USERSAS_MODIFICATUR" />
+		<property name="dateModification" column="DATE_MODIFICATION" />
+		<property name="refSinistre" column="DOSSIER_SINISTRE" />
+
+	</class>
+</hibernate-mapping>

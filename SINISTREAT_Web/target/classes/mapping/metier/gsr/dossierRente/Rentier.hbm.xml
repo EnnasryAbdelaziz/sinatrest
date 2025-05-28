@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.gsr.appli.modele.metier.dossierRente">
+	<class name="Rentier" table="GSR_RENTIER">
+		<id name="id" >
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_RENTIER</param>
+			</generator>
+		</id>
+		<!--Evo Lot 1-->
+		<property name="userSas" column="USERSAS_CREATEUR" />
+		
+		<property name="arrerageAvantConstitution" column="ARRERAGE_AVANT" />
+		<property name="arrerages" column="ARRERAGES" />
+		<property name="userSasModificateur" column="USERSAS_MODIFICATUR" />
+		<property name="dateModification" column="DATE_MODIFICATION" />
+		
+		<property name="donneeConforme" column="DONNEE_CONFORME" />
+		<property name="observationDonneeConforme" column="OBSERVATION_DONNEE_CONFORME" />
+		<!--Fin Evo Lot 1-->
+		<property name="lienParente" column="lien_parente" />
+		<property name="numeroCIN" column="numero_cin" />
+		<property name="dateNaissance" column="date_naissance" />
+		<property name="numeroTelephone" column="numero_telephone" />
+		<property name="numeroGSM" column="numero_gsm" />
+		<property name="email" column="email" />
+		<property name="adresse" column="adresse" />
+		<property name="codePostale" column="code_postale" />
+		<property name="ville" column="ville" />
+		<property name="pays" column="pays" />
+		<property name="prothese" column="prothese" />
+		<property name="tuteur" column="tuteur" />
+		
+		<property name="rentierARisque" column="rentier_arisque" />
+		<property name="renteConforme" column="rente_conforme" />
+		<property name="dateEtat" column="date_etat" />
+		<property name="validation" column="validation"/>
+		<property name="capitalConstitutif" column="capital_constitutif" />
+		<property name="dateConstitution" column="date_constitution" />
+		<property name="dateDepartRente" column="date_depart_rente" />
+		<property name="ippTauxRente" column="ipp_taux_rente" />
+		<property name="reserveMathematique" column="reserve_mathematique" />
+		<property name="dateValidation" column="date_validation" />
+		<property name="salaireUtile" column="salaire_utile" />
+		<property name="approbationQuittance" column="approbation_quittance" />
+		<property name="montantRenteTrimestrielle" column="montant_rente_trimest" />
+		<property name="periodicite" column="periodicite" />
+		<property name="civilite" column="civilite" />
+		<property name="nom" column="nom" />
+		<property name="prenom" column="prenom" />
+		<property name="sexe" column="sexe" />
+		<property name="dateCreation" column="date_creation" update = "false"/>
+		<property name="observationConforme" column="OBSERVATION_CONFORME" />
+		<property name="motifEtat" column="MOTIF_ETAT" />
+		<property name="OrphelinPur" column="ORPHELIN_PUR" />
+		<property name="dateLimiteConsignation" column="DATELIMITECONSIGNATION" />
+
+		<many-to-one name="refAyantDroit"
+			class="eai.devass.sinistreat.appli.modele.metier.sinistre.AyantDroit"
+			column="id_rentier" unique="true" />
+		<many-to-one name="refVictime"
+			class="eai.devass.sinistreat.appli.modele.metier.sinistre.Victime"
+			column="VICTIME"  unique="true" />
+
+		<many-to-one name="refTuteur"
+			class="eai.devass.gsr.appli.modele.metier.dossierRente.Tuteur"
+			column="IDTUTEUR"  cascade="save-update"/>
+
+		<many-to-one name="refEtatRentier"
+			class="eai.devass.gsr.appli.modele.parametrage.EtatRentier" column="ETAT_RENTE"
+			 />
+
+		<many-to-one name="refDossierRente"
+			class="eai.devass.gsr.appli.modele.metier.dossierRente.DossierRente"
+			column="GSR_RENTE" />
+
+		<many-to-one name="refModePayement"
+			class="eai.devass.gsr.appli.modele.metier.reglement.ModePayement"
+			column="ID_MODE_PAYEMENT"  cascade="save-update"/>
+			
+		<many-to-one name="refNationalite" 
+				class="eai.devass.gsr.appli.modele.parametrage.Nationalite" column="NATIONALITE" />
+				
+		<many-to-one name="refSituationRentier" 
+				class="eai.devass.gsr.appli.modele.parametrage.SituationRentier" column="SITUATION_RENTIER" />		
+		
+		<bag name="refsProtheses" inverse="true" cascade="all" order-by="ID asc">
+			<key column="GSR_RENTIER" />
+			<one-to-many
+				class="eai.devass.gsr.appli.modele.metier.dossierRente.Prothese" />
+		</bag>
+		
+		<bag name="refSituationEtatRentier" inverse="true" order-by="ID desc">
+			<key column="ID_RENTIER" />
+			<one-to-many class="eai.devass.gsr.appli.modele.parametrage.SituationEtatRentier" />
+		</bag>
+
+		<many-to-one name="refSortGsr"
+			class="eai.devass.gsr.appli.modele.parametrage.SortGsr" column="IDSORT"
+			 />
+
+	</class>
+</hibernate-mapping>

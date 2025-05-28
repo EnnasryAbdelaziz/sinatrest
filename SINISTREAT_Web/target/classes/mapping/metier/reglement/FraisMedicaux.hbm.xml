@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.reglement" >
+   <class name="FraisMedicaux" table="SIN_FRAISMEDICAUX" >
+	  <id name="id" column="ID">
+		<generator class="sequence">
+			<param name="sequence">SEQ_FRAISMEDICAUX</param>
+		</generator>
+	  </id>   
+      <property name="montantFacture" >
+         <column name="MONTANTFACTURE"/>
+      </property>  
+      <property name="montantAregler" >
+         <column name="MONTANTAREGLER"/>
+      </property> 
+	<many-to-one name="refReglement" column="ID_REGLEMENT" class="Reglement" />
+	<many-to-one name="refTypeFrais" column="CODE_FRAISMEDICAUX" class="eai.devass.sinistreat.appli.modele.parametrage.TypeFrais" />
+
+   </class>
+</hibernate-mapping>

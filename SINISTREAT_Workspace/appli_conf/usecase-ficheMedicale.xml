@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- ============ Services fonctionnels ============= -->
+	<bean name="201"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.CreateCertificatMedicalUC"
+		singleton="false" />
+	<bean name="202"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.ModifierCertificatMedicalUC"
+		singleton="false" />
+	<bean name="203"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.SupprimerCertificatMedicalUC"
+		singleton="false" />
+	<bean name="204"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.RechercheCertificatMedicalUC"
+		singleton="false" />
+	<bean name="207"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.InvaliderListeCertifConstatationUC"
+		singleton="false" />
+	<bean name="208"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.InvaliderListeCertifguerisonUC"
+		singleton="false" />
+	<bean name="209"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.InvaliderListeCertifContreVisiteUC"
+		singleton="false" />
+	<bean name="210"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.InvaliderListeCertifExpertiseUC"
+		singleton="false" />
+	<bean name="211"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.InvaliderListeCertifAggravationUC"
+		singleton="false" />
+	<bean name="212"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.InvaliderListeCertifRechuteUC"
+		singleton="false" />
+	<bean name="213"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.RechercheCertificatMedicalHistoriqueUC"
+		singleton="false" />
+	<bean name="215"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.AjouterListeCertificatUC"
+		singleton="false" />
+	<bean name="216"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.InvaliderListeCertificatUC"
+		singleton="false" />
+	<!-- IHM -->
+	<bean name="1020"
+		class="eai.devass.sinistreat.appli.usecase.parametrage.ihm.InitRecherchePrestataireUC"
+		singleton="false" />
+
+	<bean name="205"
+		class="eai.devass.sinistreat.appli.usecase.parametrage.RecherchePrestataireUC"
+		singleton="false" />
+     
+     <bean name="250"
+		class="eai.devass.sinistreat.appli.usecase.parametrage.RechercheMedecinTraitantUC"
+		singleton="false" />
+	<bean name="206"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.RechercheDernierCertificatMedicalUC"
+		singleton="false" />
+
+	<bean name="214"
+		class="eai.devass.sinistreat.appli.usecase.metier.fichemedicale.ModifierReserveCertificatUC"
+		singleton="false" />
+</beans>

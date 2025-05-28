@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: vendredi 1 octobre 2010 11:44:24 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.gsr.appli.modele.parametrage" >
+   <class name="TypeModePayement" table="SYN_MODEPAIEMENT" >      
+     	<id name="code">
+        	 <column name="CODE" />
+        	 <generator class="assigned" />
+      	</id>
+      	
+       <property name="libelle" column="LIBELLE" />       
+       
+       <property name="type" column="TYPE" />
+      
+   
+      
+   </class>
+</hibernate-mapping>

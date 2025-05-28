@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.mission">
+	<class name="ReferenceMissionAT" table="SIN_MISSION_REFERENCE">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_MISSIONREFERENCE</param>
+			</generator>
+		</id>
+		<property name="valeur">
+			<column name="VALEUR" />
+		</property>
+		<property name="codeReference">
+			<column name="CODEREFERENCE" />
+		</property>
+		<property name="libelleReference">
+			<column name="LIBELLEREFERENCE" />
+		</property>
+		<many-to-one name="refMission" column="IDMISSION"
+			class="eai.devass.sinistreat.appli.modele.metier.mission.MissionAT" />
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 sept. 2009 15:38:55 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="eai.devass.sinistreat.appli.modele.parametrage.CourrierHybrideContreVisite" table="PRM_COURRIER_LRH_CONTRE_VISITE">
+	      <id name="id" >
+	         <column name="ID" />
+	         <generator class="sequence">
+				<param name="sequence">SEQ_COURRIERLRHCONTREVISITE</param>
+			</generator>
+	      </id> 
+        <property name="idModele">
+            <column name="IDMODELE" />
+        </property> 
+        <property name="numeroSinistre">
+            <column name="NUMEROSINISTRE" />
+        </property>
+        <property name="idReglement">
+            <column name="ID_REGLEMENT" />
+        </property>
+        <property name="codeFraisMedicaux">
+            <column name="CODE_FRAISMEDICAUX" />
+        </property>
+         <property name="montantARegler">
+            <column name="MONTANTAREGLER" />
+        </property> 
+        <property name="datEnvoi">
+            <column name="DATENVOI" />
+        </property> 
+        <property name="etat">
+            <column name="ETAT" />
+        </property>
+         <property name="motifRejet">
+            <column name="MOTIFREJET" />
+        </property> 
+        <property name="renvoie">
+            <column name="RENVOIE" />
+        </property>    
+    </class>
+</hibernate-mapping>

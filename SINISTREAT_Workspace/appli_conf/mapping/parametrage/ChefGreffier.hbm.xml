@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- AZAS -->
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.parametrage">
+	<class name="ChefGreffier" table="PRM_CHEF_GREFFIER">
+		<id name="code">
+			<column name="CODE" />
+		</id>
+		<property name="libelle" column="LIBELLE" />
+		<property name="ville" column="VILLE" />
+	</class>
+</hibernate-mapping>

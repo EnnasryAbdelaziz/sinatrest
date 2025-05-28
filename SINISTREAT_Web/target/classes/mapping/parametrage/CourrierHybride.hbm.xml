@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 sept. 2009 15:38:55 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="eai.devass.sinistreat.appli.modele.parametrage.CourrierHybride" table="SIN_COURRIER_LRH">
+	      <id name="id" >
+	         <column name="ID" />
+	         <generator class="sequence">
+				<param name="sequence">SEQ_COURRIERHYBRIDE</param>
+			</generator>
+	      </id>
+        <property name="idLRH">
+            <column name="IDLRH" />
+        </property>    
+        
+ 
+         <property name="numeroSinistre">
+            <column name="NUMEROSINISTRE" />
+        </property> 
+         <property name="codeAbarre">
+            <column name="CODEABARRE" />
+        </property> 
+        <property name="datEnvoi">
+            <column name="DATENVOI" />
+        </property>
+         <property name="dateRetour">
+            <column name="DATERETOUR" />
+        </property>
+          <property name="dateAnnulation">
+            <column name="DATEANNULATION" />
+        </property>
+        <many-to-one name="refEtatCourrier" column="IDETAT"
+			class="eai.devass.sinistreat.appli.modele.parametrage.EtatCourrier"
+			fetch="join" not-found="ignore" />
+        <property name="methodeDistribution">
+            <column name="METHODEDISTRIBUTION" />
+        </property> 
+        <many-to-one name="refModeleLRH" column="IDMODELE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.ModeleLRH"
+			fetch="join" not-found="ignore" />
+			
+        <property name="notificationReception">
+            <column name="NOTIFICATIONRECEPTION" />
+        </property> 
+        <property name="attestationDistribution">
+            <column name="ATTESTATIONDISTRIBUTION" />
+        </property> 
+        <property name="motifRejet">
+            <column name="MOTIFREJET" />
+        </property>
+        <property name="renvoie">
+            <column name="RENVOIE" />
+        </property>
+        <property name="dateRenvoie">
+            <column name="DATERENVOIE" />
+        </property>   
+    </class>
+</hibernate-mapping>

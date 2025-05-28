@@ -1,0 +1,485 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>eai.devass.atsinistre</groupId>
+	<artifactId>SINISTREAT_Build</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>parent build</name>
+	<properties>
+		<appVersion>1.0.0</appVersion>
+	</properties>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<modules>
+		<module>../SINISTREAT_Web</module>
+		<module>../SINISTREAT_Appli</module>
+		<module>../SINISTREAT_Workspace</module>
+		<module>../SINISTREAT_COMMUN</module>
+	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpasyncclient</artifactId>
+			<version>4.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+		<!-- dependencies Global -->
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>2.7.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.1_3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+
+
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>3.2.6.ga</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring</artifactId>
+			<version>2.5.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>struts</groupId>
+			<artifactId>struts</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>ma.eai.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>1.1</version>
+		</dependency>
+<!-- 		<dependency> 
+			<groupId>ojdbc</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>14</version>
+		</dependency>-->
+
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>eai</groupId>
+			<artifactId>component</artifactId>
+			<version>9.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xmlParserAPIs</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xmlparserv2</groupId>
+			<artifactId>xmlparserv2</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<!-- dependencies WEB -->
+		<dependency>
+			<groupId>velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.0.1B</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jsptags</groupId>
+			<artifactId>pager-taglib</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>displaytag</groupId>
+			<artifactId>displaytag</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>com.lowagie</groupId> -->
+		<!-- <artifactId>itext</artifactId> -->
+		<!-- <version>2.0.8</version> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>pdf-renderer</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+		<!-- dependencies Appli -->
+		<!-- fwk itarone -->
+		<dependency>
+			<groupId>ma.eai.fwk</groupId>
+			<artifactId>eai-fwk-core</artifactId>
+			<version>1.1.6</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jasperreports</artifactId>
+					<groupId>jasperreports</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>servlet-api</artifactId>
+					<groupId>javax.servlet</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>javax.el-api</artifactId>
+					<groupId>javax.el</groupId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.oracle.internal</groupId>
+					<artifactId>ojdbc14</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- *********************GSR****************** -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>jasperreports</groupId> -->
+		<!-- <artifactId>jasperreports</artifactId> -->
+		<!-- <version>3.0.0</version> -->
+		<!--</dependency> -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>iReport</groupId>
+			<artifactId>iReport-utils</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.barbecue</groupId>
+			<artifactId>barbecue</artifactId>
+			<version>1.5-beta1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>sso_ltpatoken</groupId>
+			<artifactId>sso_ltpatoken</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>asalaccesseur</groupId>
+			<artifactId>asalaccesseur</artifactId>
+			<version>6.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>sasappelrmi</groupId>
+			<artifactId>sasappelrmi</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>Client_Accesseur</groupId>
+			<artifactId>Client_Accesseur</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>recoursentrant_modeleVO</groupId>
+			<artifactId>recoursentrant_modeleVO</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!--Nouvelle version Jar (reglement-modeleVO 1.3) CICA @REGLEMENT -->
+		<!-- <dependency> -->
+		<!-- <groupId>ma.eai.devass.transverse.reglement.sinistre</groupId> -->
+		<!-- <artifactId>reglement-modeleVO</artifactId> -->
+		<!-- <version>1.3</version> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>com.rmaassurance.transverse</groupId>
+			<artifactId>reglement-modeleVO</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>fiscalite-modeleVO</groupId> -->
+		<!-- <artifactId>fiscalite-modeleVO</artifactId> -->
+		<!-- <version>1.0</version> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>ma.eai.devass.transverse</groupId>
+			<artifactId>fiscalite-modeleVO</artifactId>
+			<version>1.3</version>
+		</dependency>
+
+		<!--22/06/2017: Nouvelle version Jar (missionnement 1.8) Gestion prestataire -->
+		<dependency>
+			<groupId>ma.eai.devass.transverse.missionnement</groupId>
+			<artifactId>missionnement</artifactId>
+			<version>1.8</version>
+		</dependency>
+
+		<!--30/03/2016: Nouvelle version Jar (referentiel 1.1) -->
+		<dependency>
+			<groupId>ma.eai.devass.transverse.referentiel</groupId>
+			<artifactId>referentiel-modeleVO</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>MOYENPAIEMENT_Appli</groupId>
+			<artifactId>MOYENPAIEMENT_Appli</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>MOYENPAIEMENT_Appli</groupId>
+			<artifactId>validator-vom</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.4.10</version>
+		</dependency>
+
+		<!-- rest jersey servlet api -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.glassfish.jersey.containers</groupId> -->
+<!-- 			<artifactId>jersey-container-servlet</artifactId> -->
+<!-- 			<version>2.29.1</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.glassfish.jersey.inject</groupId> -->
+<!-- 			<artifactId>jersey-hk2</artifactId> -->
+<!-- 			<version>2.29.1</version> -->
+<!-- 		</dependency> -->
+
+ <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-core</artifactId>
+        <version>1.19</version>
+    </dependency>
+    <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-servlet</artifactId>
+        <version>1.19</version>
+    </dependency>
+    <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-server</artifactId>
+        <version>1.19</version>
+    </dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.glassfish.jersey.media</groupId> -->
+<!-- 			<artifactId>jersey-media-json-jackson</artifactId> -->
+<!-- 			<version>2.29.1</version> -->
+<!-- 		</dependency> -->
+ <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>1.19</version>
+        </dependency>
+        
+             <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-multipart</artifactId>
+            <version>1.19</version>
+        </dependency>
+ 
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.8.7</version>
+		</dependency>
+		
+		<dependency>
+    <groupId>com.auth0</groupId>
+    <artifactId>java-jwt</artifactId>
+    <version>4.4.0</version>
+</dependency>
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.8.7</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.8.7</version>
+		</dependency>
+
+	</dependencies>
+
+</project>
+ 

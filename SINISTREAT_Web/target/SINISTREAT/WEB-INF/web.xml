@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	id="WebApp_9" version="2.4"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>AT SINISTRE</display-name>
+
+	<servlet>
+		<servlet-name>sinistreat</servlet-name>
+		<servlet-class>eai.devass.sinistreat.web.action.SinistreATServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>editionServlet</servlet-name>
+		<servlet-class>eai.devass.sinistreat.web.action.EditionServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>openRapportServlet</servlet-name>
+		<servlet-class>eai.devass.sinistreat.web.action.OpenRapportServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>testAppli</servlet-name>
+		<servlet-class>eai.devass.sinistreat.web.action.TestAppliServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>excelServlet</servlet-name>
+		<servlet-class>eai.devass.sinistreat.web.action.ExcelServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>JerseyServletContainer</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		 <init-param>
+                        <param-name>com.sun.ws.rest.config.property.resourceConfigClass</param-name>
+                        <param-value>com.sun.ws.rest.api.core.PackagesResourceConfig</param-value>
+                </init-param>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>eai.devass.sinistreat.web.action.controller</param-value>
+		</init-param>
+		 <init-param>
+            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+            <param-value>true</param-value>
+        </init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<context-param>
+    <param-name>resteasy.scan</param-name>
+    <param-value>false</param-value>
+</context-param>
+<context-param>
+    <param-name>resteasy.scan.providers</param-name>
+    <param-value>false</param-value>
+</context-param>
+<context-param>
+    <param-name>resteasy.scan.resources</param-name>
+    <param-value>false</param-value>
+</context-param>
+
+	<!-- ########################## Mapping Servlets ############################# -->
+
+	<servlet-mapping>
+		<servlet-name>sinistreat</servlet-name>
+		<url-pattern>/sinistreatServlet</url-pattern>
+	</servlet-mapping>
+	<!-- <servlet-mapping> <servlet-name>sinistreataction</servlet-name> <url-pattern>*.do</url-pattern> 
+		</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>openRapportServlet</servlet-name>
+		<url-pattern>/openRapportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>editionServlet</servlet-name>
+		<url-pattern>/editionServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>excelServlet</servlet-name>
+		<url-pattern>/excelServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>testAppli</servlet-name>
+		<url-pattern>/servlet/testAppli.mim</url-pattern>
+	</servlet-mapping>
+	
+		<servlet-mapping>
+		<servlet-name>JerseyServletContainer</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+        <filter-name>logSpecial</filter-name>
+        <filter-class>eai.devass.sinistreat.web.security.LogFilterImpl</filter-class>
+       
+    </filter>
+      <filter-mapping>
+        <filter-name>logSpecial</filter-name>
+        <servlet-name>JerseyServletContainer</servlet-name>
+    </filter-mapping>
+</web-app>
+

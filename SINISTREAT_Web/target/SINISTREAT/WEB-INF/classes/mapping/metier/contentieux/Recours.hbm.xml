@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.contentieux">
+	<class name="Recours" table="SIN_RECOURS">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_RECOURS</param>
+			</generator>
+		</id>
+		<property name="idRecours">
+			<column name="IDRECOURS" />
+		</property>
+		<property name="typeRecours">
+			<column name="TYPERECOURS" />
+		</property>
+		<property name="dateDeclenchement">
+			<column name="DATEDECLENCHEMENT" />
+		</property>
+		<property name="userCreateur">
+			<column name="USERCREATEUR" />
+		</property>
+		<property name="codeTypeAccident">
+			<column name="CODETYPEACCIDENT" />
+		</property>		
+		<property name="typeProcedure">
+			<column name="TYPEPROCEDURE" />
+		</property>
+		<property name="immatriculation">
+			<column name="IMMATRICULATION" />
+		</property>
+		<property name="nomConducteur">
+			<column name="NOMCONDUCTEUR" />
+		</property>
+		<property name="isCivilResponsable">
+			<column name="ISCIVILERESPONSABLE" />
+		</property>
+		<property name="nomResponsableCivile">
+			<column name="NOMRESPONSABLECIVILE" />
+		</property>
+		<property name="adresseResponsabiliteCivile">
+			<column name="ADRESSERESPONSABILITECIVILE" />
+		</property>
+		<property name="numeroPV">
+			<column name="NUMEROPV" />
+		</property>
+		<property name="autoriteVerbalisatrice">
+			<column name="AUTORITEVERBALISATRICE" />
+		</property>
+		<property name="codeAvocatConseil">
+			<column name="CODEAVOCATCONSEIL" />
+		</property>
+		<property name="nomAvocatConseil">
+			<column name="NOMAVOCATCONSEIL" />
+		</property>
+		<property name="codeAvocatAdverse">
+			<column name="CODEAVOCATADVERSE" />
+		</property>
+		<property name="nomAvocatAdverse">
+			<column name="NOMAVOCATADVERSE" />
+		</property>
+		<property name="partage">
+			<column name="PARTAGE" />
+		</property>
+		<property name="mntDeBoursLoi">
+			<column name="MNTDEBOURSLOI" />
+		</property>
+		<property name="mntDeBoursLoiRestant">
+			<column name="MNTDEBOURSLOIRESTANT" />
+		</property>
+		<property name="numeroCheque">
+			<column name="NUMEROCHEQUE" />
+		</property>
+		<property name="numPoliceCompagnieAdverse">
+			<column name="NUMPOLICECOMPAGNIEADVERSE" />
+		</property>
+		<property name="marque">
+			<column name="MARQUE" />
+		</property>
+		<property name="responsableRC">
+			<column name="RESPONSABLERC" />
+		</property>
+		<property name="dateEtablissement">
+			<column name="DATEETABLISSEMENTPV" />
+		</property>
+		<property name="dateTransmission">
+			<column name="DATETRANSMISSIONPV" />
+		</property>
+		<property name="dateDemande">
+			<column name="DATEDEMANDE" />
+		</property>
+		<property name="dateReception">
+			<column name="DATERECEPTION" />
+		</property>
+		<property name="causeEtCircanstances">
+			<column name="CAUSEETCIRCANSTANCES" />
+		</property>
+		<property name="commentairePronostic">
+			<column name="COMMENTAIRESPRONOSTIC" />
+		</property>
+		<property name="deboursLoiReclame">
+			<column name="DEBOURSLOIRECLAME" />
+		</property>
+		<property name="isRecuperationTotale">
+			<column name="ISRECUPERATIONTOTALE" />
+		</property>
+		<property name="dateRecuperation">
+			<column name="DATERECUPERATION" />
+		</property>
+		<property name="dateExecution">
+			<column name="DATEEXECUTION" />
+		</property>
+		<property name="numRemise">
+			<column name="NUMREMISE" />
+		</property>
+		<property name="dateModification">
+			<column name="DATEMODIFICATION" />
+		</property>
+		<property name="dateCreation" update="false">
+			<column name="DATECREATION" />
+		</property>		
+			<property name="codeBranche" update="false">
+			<column name="CODEBRANCHE" />
+		</property>
+     <property name="numeroSinistre" >
+         <column name="NUMEROSINISTRE"/>
+      </property>      
+      <property name="numeroDossierInstruction">
+         <column name="NUMDOSSIERINSTRUCTION"/>
+      </property>
+      <property name="dateSinistre" >
+         <column name="DATESINISTRE"/>
+      </property>      
+      <property name="numeroPolice">
+         <column name="NUMEROPOLICE"/>
+      </property>
+      <property name="assure" >
+         <column name="CODEASSURE"/>
+      </property>
+      <property name="codeCoassurance">
+         <column name="CODECOASSURANCE"/>
+      </property>
+      <property name="datePrescription">
+         <column name="DATEPRESCRIPTION"/>
+      </property>
+      <property name="montantFinal">
+         <column name="MONTANTFINAL"/>
+      </property>               
+      <property name="codeIntermediaire">
+         <column name="CODEINTERMEDIAIRE"/>
+      </property>   		
+      <property name="dateEtatRecours">
+         <column name="DATEETATRECOURS"/>
+      </property>  
+       <property name="montantProvision">
+         <column name="MONTANTPROVISION"/>
+      </property>      
+      <property name="numeroRecours">
+         <column name="NUMERORECOURS"/>
+      </property>  
+      <property name="refCompagnieAdverse">
+         <column name="REFCOMPAGNIEADVERSE"/>
+      </property>  
+     <property name="referenceCompagnie">
+         <column name="REFCOMPAGNIE"/>
+      </property>  
+              
+		<bag name="listRecoursAmiable" inverse="true" cascade="all" order-by="ID asc">
+			<key column="IDRECOURS" />
+			<one-to-many
+				class="eai.devass.sinistreat.appli.modele.metier.recours.RecoursAmiable" />
+		</bag>
+		<many-to-one name="refBanque" column="CODEBANQUE" class="eai.devass.sinistreat.appli.modele.parametrage.Banque" fetch="join" not-found="ignore" lazy="false"/>
+		<many-to-one name="refEtatRecours" column="ETATRECOURS" class="eai.devass.sinistreat.appli.modele.parametrage.EtatRecours" fetch="join" not-found="ignore" lazy="false"/>
+		<many-to-one name="refCompagnie" column="CODECOMPAGNIEADVERSE" class="eai.devass.sinistreat.appli.modele.parametrage.Assurance" fetch="join" not-found="ignore"  lazy="false"/>
+		<many-to-one name="refPronosticRC" column="PRONOSTICRC" class="eai.devass.sinistreat.appli.modele.parametrage.PronosticRC" fetch="join" not-found="ignore" cascade="save-update"/>
+		
+		<many-to-one name="refSinistre" column="IDSINISTRE" class="eai.devass.sinistreat.appli.modele.metier.sinistre.Sinistre" fetch="join" lazy="false"/>
+		
+		
+
+      <bag name="listeProcedureJudiciaire" inverse="true" order-by="ID asc" lazy="false">
+      	<key column="IDRECOURS"/>
+      	<one-to-many class="eai.devass.sinistreat.appli.modele.metier.contentieux.ProcedureJudiciaire"/>
+      </bag>				
+	</class>
+</hibernate-mapping>

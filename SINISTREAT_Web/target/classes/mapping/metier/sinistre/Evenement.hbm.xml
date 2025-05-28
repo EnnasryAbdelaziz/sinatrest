@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.sinistre" >
+   <class name="Evenement" table="SIN_EVENEMENT" >
+	  <id name="id" column="ID">
+		<generator class="sequence">
+			<param name="sequence">SEQ_EVENEMENT</param>
+		</generator>
+	  </id>
+      <property name="numeroEvenement" >
+         <column name="NUMEROEVENEMENT"/>
+      </property>    
+      <property name="firstEvenement" >
+         <column name="FIRSTEVENEMENT"/>
+      </property>          
+      <property name="dateAccident">
+         <column name="DATEACCIDENT"/>
+      </property>
+      <property name="lieuAccident" >
+         <column name="LIEUACCIDENT"/>
+      </property>
+      <property name="dateCreation" update="false">
+         <column name="DATECREATION"/>
+      </property>
+      <property name="heureAccident">
+         <column name="HEUREACCIDENT"/>
+      </property>     
+      <property name="detailsCause">
+         <column name="DETAILSCAUSE"/>
+      </property>          
+	<many-to-one name="refVille" column="CODEVILLE" class="eai.devass.sinistreat.appli.modele.parametrage.Ville" fetch="join" not-found="ignore" />           
+	<many-to-one name="refZone" column="CODEZONE" class="eai.devass.sinistreat.appli.modele.parametrage.Zone" fetch="join" not-found="ignore" />
+	<many-to-one name="refCause" column="CODECAUSE" class="eai.devass.sinistreat.appli.modele.parametrage.Cause" fetch="join" not-found="ignore" />
+	<many-to-one name="refTypeAccident" column="CODETYPEACCIDENT"  class="eai.devass.sinistreat.appli.modele.parametrage.TypeAccident" fetch="join" not-found="ignore" />
+
+   </class>
+</hibernate-mapping>

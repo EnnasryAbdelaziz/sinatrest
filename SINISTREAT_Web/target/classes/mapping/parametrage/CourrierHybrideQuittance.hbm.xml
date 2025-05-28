@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 sept. 2009 15:38:55 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="eai.devass.sinistreat.appli.modele.parametrage.CourrierHybrideQuittance" table="SIN_COURRIER_LRH_QUITTANCE">
+	      <id name="idLRH" >
+	         <column name="IDLRH" />
+	      </id>
+	    <property name="numeroSinistre">
+            <column name="NUMEROSINISTRE" />
+        </property>
+        <property name="numeroGrave">
+            <column name="NUMEROGRAVE" />
+        </property>    
+        <property name="nomClient">
+            <column name="NOMCLIENT" />
+        </property>  
+        <property name="dateAccident">
+            <column name="DATEACCIDENT" />
+        </property>
+        <property name="victime">
+            <column name="VICTIME" />
+        </property>
+         <property name="numeroQuittance">
+            <column name="NUMEROQUITTANCE" />
+        </property> 
+        <property name="initiales">
+            <column name="INITIALES" />
+        </property>   
+        <property name="nomUserCreateur">
+            <column name="NOMUSERCREATEUR" />
+        </property> 
+        <property name="nomBeneficiaireLettre">
+            <column name="NOMBENEFICIAIRELETTRE" />
+        </property> 
+        <property name="adresseBeneficiaireLettre">
+            <column name="ADRESSEBENEFICIAIRELETTRE" />
+        </property>
+        <property name="villeBeneficiaireLettre">
+            <column name="VILLEBENEFICIAIRELETTRE" />
+        </property>
+        <property name="numeroDossierTribunal">
+            <column name="NUMERODOSSIERTRIBUNAL" />
+        </property> 
+        <property name="lblJuridiction">
+            <column name="LBLJURIDICTION" />
+        </property>
+        <property name="dateDecision">
+            <column name="DATEDECISION" />
+        </property>
+        <property name="libellePrestation">
+            <column name="LIBELLEPRESTATION" />
+        </property>
+        <property name="montant">
+            <column name="MONTANT" />
+        </property>
+        <property name="ipp">
+            <column name="IPP" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.gsr.appli.modele.metier.dossierRente" >
+   <class name="Prothese" table="GSR_PROTHESE" >
+     		<id name="id">
+				<column name="ID" />
+				<generator class="sequence">
+					<param name="sequence">SEQ_PROTHESE</param>
+				</generator>
+			</id>
+			<property name="reserveProthese" column="reserve_prothese" />
+			<property name="dateEtat" column="date_etat" />
+			<property name="validation" column="validation" />
+			<property name="dateValidation" column="date_validation" />
+			<property name="dateProthese" column="date_prothese" />
+			<property name="montantProthese" column="montant_prothese" />
+			<property name="idProthese" column="id_prothese" />
+			<property name="numeroProthese" column="numero_prothese" />
+			<property name="dateCreation" column="date_creation" />
+			<property name="montantEstime" column="montant_estime" />
+			<property name="mntFraisAppareillage" column="frais_appareillage" />
+			<many-to-one name="refCentreProthese" lazy="false"
+				class="eai.devass.gsr.appli.modele.parametrage.CentreProthese"
+				column="CENTRE_PROTHESE" />
+			<many-to-one name="refEtatProthese" lazy="false"
+				class="eai.devass.gsr.appli.modele.parametrage.EtatProthese"
+				column="ETAT_PROTHESE" />
+			<many-to-one name="refNatureProthese" lazy="false"
+				class="eai.devass.gsr.appli.modele.parametrage.NatureProthese"
+				column="nature_prothese" />
+			<many-to-one name="refRentier"
+				class="eai.devass.gsr.appli.modele.metier.dossierRente.Rentier"
+				column="GSR_RENTIER" />
+			<many-to-one name="refQuittanceGSR"
+			class="eai.devass.gsr.appli.modele.metier.reglement.QuittanceGsr"
+			column="ID_QUITTANCE" lazy="false" />
+			<many-to-one name="refMvtProthese"
+			class="eai.devass.gsr.appli.modele.metier.mouvements.MvtProthese"
+			column="ID_MVT_PROTHESE" lazy="false" />
+
+   </class>
+</hibernate-mapping>

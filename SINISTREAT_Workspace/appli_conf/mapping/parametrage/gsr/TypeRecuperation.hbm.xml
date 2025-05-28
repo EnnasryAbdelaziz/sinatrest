@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access='property'  auto-import="false"  >
+<class name="eai.devass.gsr.appli.modele.parametrage.TypeRecuperation" table="PRM_GSR_TypeRecuperation">
+			<id name="id" type="long">
+				<column name="ID" precision="22" scale="0" />
+					<generator class="increment"/>
+			</id>
+			<property name="code" column="code" />
+			<property name="libelle" column="libelle" />
+			<property name="dateCreation" column="date_creation" />
+
+
+
+		</class>
+		</hibernate-mapping>

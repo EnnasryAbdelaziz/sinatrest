@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.reglement">
+	<class name="HistorisationDateRappel" table="SIN_HISTO_DATE_RAPPEL">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_HISTO_DATE_RAPPEL</param>
+			</generator>
+		</id>
+		<property name="dateRappel">
+			<column name="date_rappel" />
+		</property>
+		<property name="dateCreation">
+			<column name="date_creation" />
+		</property>
+		<property name="userCreation">
+			<column name="user_creation" />
+		</property>
+		<many-to-one name="reglement" column="id_reglement"
+			class="eai.devass.sinistreat.appli.modele.metier.reglement.Reglement"
+			update="false" />
+	</class>
+</hibernate-mapping>

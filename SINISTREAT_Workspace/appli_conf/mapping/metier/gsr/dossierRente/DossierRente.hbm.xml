@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.gsr.appli.modele.metier.dossierRente">
+	<class name="DossierRente" table="GSR_RENTE">
+		<id name="id" >
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_RENTE</param>
+			</generator>
+		</id>
+		<property name="compagnieRente" column="compagnie_rente" />
+		<property name="numeroRente" column="numero_rente" />
+		<property name="idDossierRente" column="id_dossier_rente" />
+		<property name="dateEtat" column="date_etat" />
+		<property name="dateValidation" column="date_validation" />
+		<property name="validation" column="validation" />
+		<property name="dateCreation" column="date_creation" update = "false"/>
+		
+		<property name="userSasCreateur" column="USERSAS_CREATEUR" />
+		<property name="userSasModificateur" column="USERSAS_MODIFICATUR" />
+		<property name="dateModification" column="DATE_MODIFICATION" />
+
+		<property name="numeroOrdre" column="NUMERO_ORDRE" />
+		
+		<many-to-one name="refSinistre"
+			class="eai.devass.sinistreat.appli.modele.metier.sinistre.Sinistre"
+			column="DOSSIER_SINISTRE" not-null="true" unique="true" />
+			
+		<many-to-one name="refEtatRentier" class="eai.devass.gsr.appli.modele.parametrage.EtatRentier" column="ETAT" />
+
+		<bag name="refsRentier" inverse="true" cascade="all" order-by="ID asc">
+			<key column="GSR_RENTE" />
+			<one-to-many
+				class="eai.devass.gsr.appli.modele.metier.dossierRente.Rentier" />
+		</bag>
+		
+		<bag name="refSituationDossierRentier" inverse="true" order-by="ID desc">
+			<key column="ID_DOSSRENTE" />
+			<one-to-many class="eai.devass.gsr.appli.modele.parametrage.SituationDossierRentier" />
+		</bag>
+
+	</class>
+</hibernate-mapping>

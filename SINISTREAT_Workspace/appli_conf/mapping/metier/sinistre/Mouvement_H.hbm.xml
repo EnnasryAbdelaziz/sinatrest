@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.sinistre" >
+   <class name="Mouvement_h" table="SIN_MOUVEMENT_H" >
+	  <id name="id" column="ID">
+		<generator class="sequence">
+			<param name="sequence">SEQ_Mouvement_H</param>
+		</generator>
+	  </id>
+      <property name="numeroSinistre" >
+         <column name="NUMEROSINISTRE"/>
+      </property>    
+      <property name="dateAccident" >
+         <column name="DATENAISSANCE_NEW"/>
+      </property>    
+      <property name="numeroPolice">
+         <column name="NUMEROPOLICE"/>
+      </property>
+        <property name="codeClient" >
+         <column name="CODECLIENT"/>
+      </property>
+      <property name="codeIntermediaire" >
+         <column name="CODEINTERMEDIAIRE"/>
+      </property>      
+      <property name="nomIntermediaire">
+         <column name="NOMINTERMEDIAIRE"/>
+      </property>
+      <property name="nomClient" >
+         <column name="NOMCLIENT"/>
+      </property>
+      <property name="isRecours">
+         <column name="ISRECOURS"/>
+      </property>   
+      <property name="idRecours">
+         <column name="IDRECOURS"/>
+      </property>  
+      <property name="codeGarantie" >
+         <column name="CODEGARANTIE"/>
+      </property>      
+      <property name="observation" >
+         <column name="OBSERVATION"/>
+      </property>   
+      <property name="idTransaction">
+         <column name="IDTRANSACTION"/>
+      </property> 
+      <property name="userCreateur">
+         <column name="USERCREATEUR"/>
+      </property>
+            
+	<many-to-one name="refEvenement" column="IDEVENEMENT" class="eai.devass.sinistreat.appli.modele.metier.sinistre.Evenement" cascade="save-update"/>
+	<many-to-one name="refVictime" column="IDVICTIME" class="eai.devass.sinistreat.appli.modele.metier.sinistre.Victime" cascade="save-update"/>
+	
+
+	
+      <bag name="listReglement" inverse="true" cascade="all" order-by="ID asc" >
+      	<key column="IDSINISTRE"/>
+      	<one-to-many class="eai.devass.sinistreat.appli.modele.metier.reglement.Reglement"/>
+      </bag>
+	
+   </class>
+</hibernate-mapping>

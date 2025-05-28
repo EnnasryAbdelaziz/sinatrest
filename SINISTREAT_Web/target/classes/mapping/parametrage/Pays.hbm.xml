@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: vendredi 1 octobre 2010 11:43:53 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.parametrage">
+	<class name="Pays" table="SYN_PAYS">
+		<!-- <id name="code"> -->
+		<!-- <column name="CODPAYS" /> -->
+		<!-- <generator class="assigned" /> -->
+		<!-- </id> -->
+<!---->
+		<!-- <property name="libelle" column="LBLPAYS" /> -->
+
+		<id name="code">
+			<column name="ID" />
+			<generator class="assigned" />
+		</id>
+		<property name="libelle" column="LIBELLE" />
+
+	</class>
+</hibernate-mapping>

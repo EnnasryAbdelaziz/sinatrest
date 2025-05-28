@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- ============ Services fonctionnels ============= -->
+	<!-- ============ Certificats ============= -->
+
+	<bean name="20100304"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.CertificatsConsulterUC"
+		singleton="false" />
+	<bean name="20100300"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.CertificatsAjouterUC"
+		singleton="false" />
+	<bean name="20100302"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.CertificatsEditerUC"
+		singleton="false" />
+	<bean name="20100301"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.CertificatsModifierUC"
+		singleton="false" />
+	<bean name="20100303"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.CertificatsRechercherUC"
+		singleton="false" />
+	<bean name="20100305"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.CertificatsSupprimerUC"
+		singleton="false" />
+	<bean name="20100306"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.CertificatsAnnulerEditionUC"
+		singleton="false" />
+
+	<!-- ============ Protheses ============= -->
+	<bean name="20100400"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.ProthesesAjouterUC"
+		singleton="false" />
+	<bean name="20100402"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.ProthesesEditerUC"
+		singleton="false" />
+	<bean name="20100401"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.ProthesesModifierUC"
+		singleton="false" />
+	<bean name="20100403"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.ProthesesRechercherUC"
+		singleton="false" />
+	<bean name="20100404"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.ProthesesConsulterUC"
+		singleton="false" />
+	<bean name="20100405"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.ProthesesSupprimerUC"
+		singleton="false" />
+	<bean name="20100406"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.ProthesesAnnulerEditionUC"
+		singleton="false" />
+
+	<!-- ============ Dossier rente ============= -->
+	<bean name="20100100"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteAjouterUC"
+		singleton="false" />
+	<bean name="20100102"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteEditerUC"
+		singleton="false" />
+	<bean name="20100101"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteModifierUC"
+		singleton="false" />
+	<bean name="20100103"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteRechercherUC"
+		singleton="false" />
+	<bean name="20100104"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteConsulterUC"
+		singleton="false" />
+	<bean name="20100105"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteSupprimerUC"
+		singleton="false" />
+	<bean name="20100106"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteAnnulerEditionUC"
+		singleton="false" />
+	<bean name="20100107"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteRechercherBySinistreUC"
+		singleton="false" />
+	<bean name="20100108"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteGetLastNumRenteUC"
+		singleton="false" />
+	<bean name="20100109"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteGetRenteNoValiderUC"
+		singleton="false" />
+	<bean name="20100110"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteValiderUC"
+		singleton="false" />
+	<bean name="20100111"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.DossierRenteUpdateEtatUC"
+		singleton="false" />
+	<!-- ============ Rentier ============= -->
+	<bean name="20100200"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.RentierAjouterUC"
+		singleton="false" />
+	<bean name="20100202"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.RentierEditerUC"
+		singleton="false" />
+	<bean name="20100201"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.RentierModifierUC"
+		singleton="false" />
+	<bean name="20100203"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.RentierRechercherUC"
+		singleton="false" />
+	<bean name="20100204"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.RentierConsulterUC"
+		singleton="false" />
+	<bean name="20100205"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.RentierSupprimerUC"
+		singleton="false" />
+	<bean name="20100206"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.RentierAnnulerEditionUC"
+		singleton="false" />
+
+	<bean name="20100207"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.InitRechercheRentierUC"
+		singleton="false" />
+	<!-- ============ Tuteur ============= -->
+	<bean name="20100000"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.TuteurAjouterUC"
+		singleton="false" />
+	<bean name="20100002"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.TuteurEditerUC"
+		singleton="false" />
+	<bean name="20100001"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.TuteurModifierUC"
+		singleton="false" />
+	<bean name="20100003"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.TuteurRechercherUC"
+		singleton="false" />
+	<bean name="20100004"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.TuteurConsulterUC"
+		singleton="false" />
+	<bean name="20100005"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.TuteurSupprimerUC"
+		singleton="false" />
+	<bean name="20100006"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.TuteurAnnulerEditionUC"
+		singleton="false" />
+		
+	<bean name="20100007"
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.ChercherCinRentierUC" />	
+		
+		
+		
+	<!-- ============ ConsomReserveRente ============= -->
+	<bean name="20200000"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsomReserveRenteAjouterUC"
+		singleton="false" />
+	<bean name="20200002"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsomReserveRenteEditerUC"
+		singleton="false" />
+	<bean name="20200001"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsomReserveRenteModifierUC"
+		singleton="false" />
+	<bean name="20200003"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsomReserveRenteRechercherUC"
+		singleton="false" />
+	<bean name="20200004"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsomReserveRenteConsulterUC"
+		singleton="false" />
+	<bean name="20200005"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsomReserveRenteSupprimerUC"
+		singleton="false" />
+	<bean name="20200006"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsomReserveRenteAnnulerEditionUC"
+		singleton="false" />
+		
+	<bean name="20200007"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ListerRedistributionRentierUC" />
+	<bean name="20200009555" 
+		class="eai.devass.gsr.appli.usecase.metier.dossierRente.InitHistReserveMathUC" 
+		/>
+	<!-- ============ CRUD SERVLET : parametrage ============= -->
+	<bean name="20200008" class="eai.devass.gsr.appli.usecase.parametrage.CrudServletUC" />
+	
+	
+	<!-- ============ Ordres virements ============= -->
+
+
+
+</beans>

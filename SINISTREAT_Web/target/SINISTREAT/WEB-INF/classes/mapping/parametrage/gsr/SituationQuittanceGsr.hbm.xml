@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 sept. 2009 15:38:55 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping package="eai.devass.gsr.appli.modele.parametrage">
+    
+    <class name="SituationQuittanceGsr" table="PRM_SITUATION_QUITTANCEGSR">
+		<id name="identifiant" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_SITUATION_QUITTANCEGSR</param>
+			</generator>
+		</id>
+		<property name="operateur" column="OPERATEUR" />
+		<property name="dateEtat" column="DAT_ETAT" />
+		<many-to-one name="refEtatQtc" class="EtatQtc" column="ID_ETAT" />
+		<many-to-one name="refMotifSituationEtat" class="MotifSituationEtat" column="COD_MOTIF" />
+		<many-to-one name="refQuittanceGsr" class="eai.devass.gsr.appli.modele.metier.reglement.QuittanceGsr" column="ID_QTC" />
+			
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,150 @@
+package eai.devass.commun.appli.converter;
+
+public class ReplaceSpecialCharacter {
+
+	
+	public String getSpecialCharacter(String value)	{
+		
+	
+		
+		value = value.replaceAll("%21","!");
+		value = value.replaceAll("%22","\"");
+		value = value.replaceAll("%23","#");
+		value = value.replaceAll("%24","$");
+		value = value.replaceAll("%25","%");
+		value = value.replaceAll("%26","&");
+		value = value.replaceAll("%27","'");
+		value = value.replaceAll("%28","(");
+		value = value.replaceAll("%29",")");
+		value = value.replaceAll("%2A","*");
+		value = value.replaceAll("%2B","+");
+		value = value.replaceAll("%2C",",");
+		value = value.replaceAll("%2D","-");
+		value = value.replaceAll("%2E",".");
+		value = value.replaceAll("%2F","/");
+		value = value.replaceAll("%3A",":");
+		value = value.replaceAll("%3B",";");
+		value = value.replaceAll("%3C","<");
+		value = value.replaceAll("%3D","=");
+		value = value.replaceAll("%3E",">");
+		value = value.replaceAll("%3F","?");
+		value = value.replaceAll("%40","@");
+		value = value.replaceAll("%5B","[");
+		value = value.replaceAll("%5D","]");
+		value = value.replaceAll("%5E","^");
+		value = value.replaceAll("%5F","_");
+		value = value.replaceAll("%60","`");
+		value = value.replaceAll("%7B","{");
+		value = value.replaceAll("%7C","|");
+		value = value.replaceAll("%7D","}");
+		value = value.replaceAll("%7E","~");
+		//new Special Character 02/11/2015
+		value = value.replaceAll("%0D"," ");
+		value = value.replaceAll("%0A"," ");
+		value = value.replaceAll("%0D%0A"," ");
+		value = value.replaceAll("%C2%82"," ");
+		value = value.replaceAll("%C2%A0"," ");
+		value = value.replaceAll("%A0%A0"," ");
+		//
+		value = value.replaceAll("%C2%A1","¡");
+		value = value.replaceAll("%C2%A2","¢");
+		value = value.replaceAll("%C2%A3","£");
+		value = value.replaceAll("%C2%A4","¤");
+		value = value.replaceAll("%C2%A5","¥");
+		value = value.replaceAll("%C2%A6","¦");
+		value = value.replaceAll("%C2%A7","§");
+		value = value.replaceAll("%C2%A8","¨");
+		value = value.replaceAll("%C2%A9","©");
+		value = value.replaceAll("%C2%AA","ª");
+		value = value.replaceAll("%C2%AB","«");
+		value = value.replaceAll("%C2%AC","¬");
+		value = value.replaceAll("%C2%AD","­");
+		value = value.replaceAll("%C2%AE","®");
+		value = value.replaceAll("%C2%AF","¯");
+		value = value.replaceAll("%C2%B0","°");
+		value = value.replaceAll("%C2%B1","±");
+		value = value.replaceAll("%C2%B2","²");
+		value = value.replaceAll("%C2%B3","³");
+		value = value.replaceAll("%C2%B4","´");
+		value = value.replaceAll("%C2%B5","µ");
+		value = value.replaceAll("%C2%B6","¶");
+		value = value.replaceAll("%C2%B7","·");
+		value = value.replaceAll("%C2%B8","¸");
+		value = value.replaceAll("%C2%B9","¹");
+		value = value.replaceAll("%C2%BA","º");
+		value = value.replaceAll("%C2%BB","»");
+		value = value.replaceAll("%C2%BC","¼");
+		value = value.replaceAll("%C2%BD","½");
+		value = value.replaceAll("%C2%BE","¾");
+		value = value.replaceAll("%C2%BF","¿");
+		value = value.replaceAll("%C3%80","À");
+		value = value.replaceAll("%C3%81","Á");
+		value = value.replaceAll("%C3%82","Â");
+		value = value.replaceAll("%C3%83","Ã");
+		value = value.replaceAll("%C3%84","Ä");
+		value = value.replaceAll("%C3%85","Å");
+		value = value.replaceAll("%C3%86","Æ");
+		value = value.replaceAll("%C3%87","Ç");
+		value = value.replaceAll("%C3%88","È");
+		value = value.replaceAll("%C3%89","É");
+		value = value.replaceAll("%C3%8A","Ê");
+		value = value.replaceAll("%C3%8B","Ë");
+		value = value.replaceAll("%C3%8C","Ì");
+		value = value.replaceAll("%C3%8D","Í");
+		value = value.replaceAll("%C3%8E","Î");
+		value = value.replaceAll("%C3%8F","Ï");
+		value = value.replaceAll("%C3%90","Ð");
+		value = value.replaceAll("%C3%91","Ñ");
+		value = value.replaceAll("%C3%92","Ò");
+		value = value.replaceAll("%C3%93","Ó");
+		value = value.replaceAll("%C3%94","Ô");
+		value = value.replaceAll("%C3%95","Õ");
+		value = value.replaceAll("%C3%96","Ö");
+		value = value.replaceAll("%C3%97","×");
+		value = value.replaceAll("%C3%98","Ø");
+		value = value.replaceAll("%C3%99","Ù");
+		value = value.replaceAll("%C3%9A","Ú");
+		value = value.replaceAll("%C3%9B","Û");
+		value = value.replaceAll("%C3%9C","Ü");
+		value = value.replaceAll("%C3%9D","Ý");
+		value = value.replaceAll("%C3%9E","Þ");
+		value = value.replaceAll("%C3%9F","ß");
+		value = value.replaceAll("%C3%A0","à");
+		value = value.replaceAll("%C3%A1","á");
+		value = value.replaceAll("%C3%A2","â");
+		value = value.replaceAll("%C3%A3","ã");
+		value = value.replaceAll("%C3%A4","ä");
+		value = value.replaceAll("%C3%A5","å");
+		value = value.replaceAll("%C3%A6","æ");
+		value = value.replaceAll("%C3%A7","ç");
+		value = value.replaceAll("%C3%A8","è");
+		value = value.replaceAll("%C3%A9","é");
+		value = value.replaceAll("%C3%AA","ê");
+		value = value.replaceAll("%C3%AB","ë");
+		value = value.replaceAll("%C3%AC","ì");
+		value = value.replaceAll("%C3%AD","í");
+		value = value.replaceAll("%C3%AE","î");
+		value = value.replaceAll("%C3%AF","ï");
+		value = value.replaceAll("%C3%B0","ð");
+		value = value.replaceAll("%C3%B1","ñ");
+		value = value.replaceAll("%C3%B2","ò");
+		value = value.replaceAll("%C3%B3","ó");
+		value = value.replaceAll("%C3%B4","ô");
+		value = value.replaceAll("%C3%B5","õ");
+		value = value.replaceAll("%C3%B6","ö");
+		value = value.replaceAll("%C3%B7","÷");
+		value = value.replaceAll("%C3%B8","ø");
+		value = value.replaceAll("%C3%B9","ù");
+		value = value.replaceAll("%C3%BA","ú");
+		value = value.replaceAll("%C3%BB","û");
+		value = value.replaceAll("%C3%BC","ü");
+		value = value.replaceAll("%C3%BD","ý");
+		value = value.replaceAll("%C3%BE","þ");
+		value = value.replaceAll("%C3%BF","ÿ");
+		value = value.replaceAll("_®","e");
+		value = value.replaceAll("\\+"," ");
+		
+		return value;
+	}
+	
+}

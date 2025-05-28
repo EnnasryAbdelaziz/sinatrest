@@ -1,0 +1,63 @@
+/*
+ * Ajout d'un nouveau champ -> ORPHELIN_PUR
+ */
+ALTER TABLE SINISTREAT.GSR_RENTIER
+ADD (ORPHELIN_PUR CHAR(1 BYTE))
+
+
+/*
+ * Ajout d'un nouveau champ pays -> CODEPAYS le 15/02/2013
+ */
+ALTER TABLE SINISTREAT.SIN_AYANTDROIT
+ADD (CODEPAYS VARCHAR2(25 BYTE))
+
+/*
+ * Ajout d'un nouveau champ USER -> le 12/04/2013
+ */      
+ALTER TABLE SINISTREAT.GSR_RENTIER
+ADD (USERSAS VARCHAR2(200 BYTE))
+
+/*
+ * Ajout d'un nouveau champ arrérages avant  -> le 18/06/2013
+ */      
+ALTER TABLE SINISTREAT.GSR_RENTIER
+ADD (ARRERAGE_AVANT  NUMBER(10,3))
+
+/*
+ * Ajout d'un nouveau champ arrérages avant  -> le 18/06/2013
+ */      
+ALTER TABLE SINISTREAT.GSR_RENTIER
+ADD (ARRERAGES  NUMBER(10,3))
+
+/*
+ * Ajout d'un nouveau champ USER MODIFICATUR -> le 19/04/2013
+ */      
+ALTER TABLE SINISTREAT.GSR_RENTIER
+ADD (USERSAS_MODIFICATUR VARCHAR2(200 BYTE))
+
+/*
+ * Ajout d'un nouveau champ DATE MODIFICATION -> le 19/04/2013
+ */      
+ALTER TABLE SINISTREAT.GSR_RENTIER
+ADD (DATE_MODIFICATION DATE)
+
+/*
+ * Rename champ USER -> le 19/04/2013
+ */ 
+ALTER TABLE SINISTREAT.GSR_RENTIER
+RENAME COLUMN USERSAS TO USERSAS_CREATEUR;
+
+
+/*
+ * Ajout d'un nouveau champ données non-conformité  ->  le 01/07/2013
+ */
+ALTER TABLE SINISTREAT_DEV.GSR_RENTIER
+ADD (DONNEE_CONFORME CHAR(1 BYTE))
+
+/*
+ * Ajout d'un nouveau champ Observation données non-conforme -> le 01/07/2013
+ */      
+ALTER TABLE SINISTREAT_DEV.GSR_RENTIER
+ADD (OBSERVATION_DONNEE_CONFORME VARCHAR2(200 BYTE))
+
+

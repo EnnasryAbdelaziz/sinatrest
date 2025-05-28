@@ -1,0 +1,21 @@
+<Context>
+    <Resource auth="Container" 
+    		  name="jdbc/ASS_SIN_AT"
+              type="javax.sql.DataSource"
+              driverClassName="oracle.jdbc.OracleDriver"
+              url="${DB_URL}"
+              username="${DB_USERNAME}"
+              password="${DB_PASSWORD}"  
+              maxTotal="${DATASOURCE_MAXTOTAL}"
+              maxIdle="${DATASOURCE_MAXIDLE}"
+              minIdle="${DATASOURCE_MINIDLE}"
+              maxActive="${DATASOURCE_MAXACTIVE}" 
+              maxWait="${DATASOURCE_MAXWAIT}"
+              initialSize="${DATASOURCE_INITIALSIZE}"
+              removeAbandoned="${DATASOURCE_REMOVEABANDONED}" />
+   
+</Context>
+
+
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="eai.devass.sinistreat.appli.modele.metier.conciliation">
+	<class name="SinResultatOffre" table="SIN_RESULTAT_OFFRE">
+	
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_SIN_RESULTAT_OFFRE</param>
+			</generator>
+		</id>
+		
+		<property name="dateRefus">
+			<column name="DATE_REFUS" />
+		</property>
+		
+		<property name="dateResultat">
+			<column name="DATE_RESULTAT" />
+		</property>
+		
+		<property name="motifRefus">
+			<column name="MOTIF_REFUS"/>
+		</property>
+						
+		<many-to-one name="refEtatResultat" column="ID_PRM_RESULTAT" 
+		class="eai.devass.sinistreat.appli.modele.parametrage.ResultatOffre"
+	    fetch="join" not-found="ignore" />
+	
+	</class>
+</hibernate-mapping>
+
+
+
+

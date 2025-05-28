@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="eai.devass.sinistreat.appli.modele.metier.contentieux">
+	<class name="PartieAdverseJud" table="SIN_RECOURS_PARTIE">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_PARTIEADVERSE</param>
+			</generator>
+		</id>
+		<property name="codeTiers">
+			<column name="CODETIERS" />
+		</property>
+		<property name="montantRequette">
+			<column name="MONTANTREQUETTE" />
+		</property>
+		<property name="montantIndemnisation">
+			<column name="MONTANTINDEMNISATION" />
+		</property>
+		<property name="substitution">
+			<column name="SUBSTITUTION" />
+		</property>
+		<property name="mntExecutionProvisoire">
+			<column name="MNTEXECUTIONPROVISOIRE" />
+		</property>
+		<property name="reference">
+			<column name="REFERENCE" />
+		</property>
+		<property name="partieAdverseType">
+			<column name="TYPE" />
+		</property>
+		<property name="nom">
+			<column name="NOM" />
+		</property>
+		<property name="prenom">
+			<column name="PRENOM" />
+		</property>
+		<property name="raisonSociale">
+			<column name="RAISONSOCIAL" />
+		</property>
+		<property name="ville">
+			<column name="ADRESSE" />
+		</property>
+		<property name="telephone">
+			<column name="TELEPHONE" />
+		</property>
+		<property name="email">
+			<column name="EMAIL" />
+		</property>
+		<property name="numeroCIN">
+			<column name="NUMEROCIN" />
+		</property>
+		<property name="dateCreation">
+			<column name="DATECREATION" />
+		</property>
+		<property name="idPartieAdverse">
+			<column name="IDPARTIEADVERSE" />
+		</property>
+		<many-to-one name="refProcJudiciaire" column="IDPROCEDUREJUDICIAIRE"
+			class="eai.devass.sinistreat.appli.modele.metier.contentieux.ProcedureJudiciaire" />
+
+	</class>
+</hibernate-mapping>

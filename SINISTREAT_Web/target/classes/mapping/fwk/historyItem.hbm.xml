@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+<hibernate-mapping package="eai.devass.commun.appli.modele" auto-import="false">
+	<class name="HistoryItem" table="ITAR_HISTORYITEM">	
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_GSR_HISTORY_ITEM</param>
+			</generator>
+			
+		</id>
+		
+		
+		<property name="idHistorisable" column="IDHISTORISABLE" />
+		<property name="numeroVersion" column="NUMVERSION" />
+		<property name="serialisationBlob" type="blob" column="SERIALISATION" update="false"/>
+		<property name="nomClasse" column="NOMCLASSE" />
+		<property name="utilisateur" column="UTILISATEUR" />
+		<property name="dateVersion" column="DATEVERSION" />
+		<property name="action" column="ACTIONHISTORIQUE" />
+	</class>
+</hibernate-mapping>

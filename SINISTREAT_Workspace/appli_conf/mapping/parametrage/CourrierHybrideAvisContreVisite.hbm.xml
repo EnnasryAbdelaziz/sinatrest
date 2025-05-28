@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 sept. 2009 15:38:55 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="eai.devass.sinistreat.appli.modele.parametrage.CourrierHybrideAvisContreVisite" table="SIN_COURRIER_LRH_CONTREVISITE">
+	      <id name="idLRH" >
+	         <column name="IDLRH" />
+	      </id>
+	       <property name="numeroSinistre">
+            <column name="NUMEROSINISTRE" />
+        </property>
+	    <property name="adressePrestataire">
+            <column name="ADRESSEPRESTATAIRE" />
+        </property>
+        <property name="nomPrestataire">
+            <column name="NOMPRESTATAIRE" />
+        </property>    
+        <property name="dateContreVisite">
+            <column name="DATECONTREVISITE" />
+        </property>  
+         <property name="heureContreVisite">
+            <column name="HEURECONTREVISITE" />
+        </property> 
+        <property name="dateAccident">
+            <column name="DATEACCIDENT" />
+        </property>
+         <property name="adresseVictime">
+            <column name="ADRESSEVICTIME" />
+        </property>
+         <property name="dateCreation">
+            <column name="DATECREATION" />
+        </property>
+        <property name="nomVictime">
+            <column name="NOMVICTIME" />
+        </property>
+         <property name="typeLettre">
+            <column name="TYPELETTRE" />
+        </property> 
+        <property name="nomClient">
+            <column name="NOMCLIENT" />
+        </property> 
+      
+    </class>
+</hibernate-mapping>

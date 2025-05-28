@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="eai.devass.gsr.appli.modele.metier.dossierRente">
+	<class name="HistReserveMath" table="SIN_HIS_RESERVE_MATH">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_HIST_RESERVE_MATH</param>
+			</generator>
+		</id>
+		<property name="idRente" >
+			<column name="IDRENTE" />
+		</property>
+		<property name="dateActualisation" >
+			<column name="DATEACTUALISATION" />
+		</property>
+		<property name="age" >
+			<column name="AGE" />
+		</property>
+		<property name="coeffage" >
+			<column name="COEFFICIENTAGE" />
+		</property>
+		<property name="mntRenteAnnuel" >
+			<column name="MONTANTRENTEANNUELLE" />
+		</property>
+		<property name="reserveprothese" >
+			<column name="RESERVEPROTHESE" />
+		</property>
+		<property name="reserveMath" >
+			<column name="RESERVEMATH" />
+		</property>
+	</class>
+</hibernate-mapping>

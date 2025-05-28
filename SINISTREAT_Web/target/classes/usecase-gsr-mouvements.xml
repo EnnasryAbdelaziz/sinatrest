@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- ============ Services fonctionnels ============= -->
+	<!-- ============ Heritier ============= -->
+
+	<bean name="20200104"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.HeritierConsulterUC"
+		singleton="false" />
+	<bean name="20200100"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.HeritierAjouterUC"
+		singleton="false" />
+	<bean name="20200102"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.HeritierEditerUC"
+		singleton="false" />
+	<bean name="20200101"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.HeritierModifierUC"
+		singleton="false" />
+	<bean name="20200103"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.HeritierRechercherUC"
+		singleton="false" />
+	<bean name="20200105"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.HeritierSupprimerUC"
+		singleton="false" />
+	<bean name="20200106"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.HeritierAnnulerEditionUC"
+		singleton="false" />
+
+	<!-- ============ Mouvement============= -->
+	<bean name="20200200"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.MouvementAjouterUC"
+		singleton="false" />
+
+	<bean name="20200201"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.MouvementModifierUC"
+		singleton="false" />
+
+	<bean name="20200202"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.MouvementAnnulerUC"
+		singleton="false" />
+
+	<bean name="20200203"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.MouvementSupprimerUC"
+		singleton="false" />
+
+	<bean name="20200204"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.MouvementRechercherUC"
+		singleton="false" />
+	<bean name="20200206"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.MouvementValiderUC"
+		singleton="false" />
+	<bean name="20200207"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.MouvementRechercherByDossierUC"
+		singleton="false" />
+
+	<!-- ============ Calculs============= -->
+	<bean name="40203001"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculCapitalCNRAUC"
+		singleton="false" />
+	<bean name="40203002"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ValiderCapitalCNRAUC"
+		singleton="false" />
+
+	<bean name="40203003"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculArreragesRenteUC"
+		singleton="false" />
+	<bean name="40203004"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculerComplementEtArrerageCNRAUC"
+		singleton="false" />
+	<bean name="40203005"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculArreragesPercuUC"
+		singleton="false" />
+	
+	<bean name="40203006"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculArreragesEchuUC"
+		singleton="false" />
+
+	<bean name="40203007"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculCnraRegUC"
+		singleton="false" />
+		
+	<bean name="202001010"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculerReserveProtheseUC"
+		singleton="false" />
+		
+	<bean name="202001110"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculerCumulReserveProtheseUC"
+		singleton="false" />
+		
+	<bean name="202001011"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculerCapitalRachatUC"
+		singleton="false" />
+
+	<!-- ============ MvtRachat ============= -->
+
+	<!-- ============ MvtRecuperation ============= -->
+	<!-- ============ MvtRemariage ============= -->
+	<bean name="20201400"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.CalculerMntRemariageUC" />
+
+
+	<!-- ============ MvtRemiseEnCours ============= -->
+	<!-- ============ MvtRenteEchue ============= -->
+	<!-- ============ MvtSuppression ============= -->
+
+	<!-- ============ MvtSuspension ============= -->
+	<!-- ============ Prerglt ============= -->
+
+
+	<!-- ============ QuittanceGsr============= -->
+
+
+	<bean name="20202007"
+		class="eai.devass.gsr.appli.usecase.metier.reglement.TotalQuittanceGsrUC"
+		singleton="false" />
+	<bean name="20202009"
+		class="eai.devass.gsr.appli.usecase.metier.reglement.SuppressionMontantInduUC"
+		singleton="false" />
+	
+
+	<!-- =========== TypeCheque ============== -->
+
+	<bean name="2204"
+		class="eai.devass.gsr.appli.usecase.parametrage.TypeChequeConsulterUC"
+		singleton="false" />
+	<bean name="2200"
+		class="eai.devass.gsr.appli.usecase.parametrage.TypeChequeAjouterUC"
+		singleton="false" />
+	<bean name="2203"
+		class="eai.devass.gsr.appli.usecase.parametrage.TypeChequeRechercherUC"
+		singleton="false" />
+
+
+	<!-- TypeReglement -->
+
+	<bean name="2104"
+		class="eai.devass.gsr.appli.usecase.parametrage.TypeRgltGsrConsulterUC"
+		singleton="false" />
+	<bean name="2100"
+		class="eai.devass.gsr.appli.usecase.parametrage.TypeRgltGsrAjouterUC"
+		singleton="false" />
+	<bean name="2103"
+		class="eai.devass.gsr.appli.usecase.parametrage.TypeRgltGsrRechercherUC"
+		singleton="false" />
+
+	<!-- ModeReglement -->
+
+	<bean name="2304"
+		class="eai.devass.gsr.appli.usecase.parametrage.ModeReglementConsulterUC"
+		singleton="false" />
+	<bean name="2300"
+		class="eai.devass.gsr.appli.usecase.parametrage.ModeReglementAjouterUC"
+		singleton="false" />
+	<bean name="2303"
+		class="eai.devass.gsr.appli.usecase.parametrage.ModeReglementRechercherUC"
+		singleton="false" />
+
+	<bean name="40202001"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.EnregisterMouvementUC" />
+
+	<bean name="40202002"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsulterMouvementUC" />
+
+	<bean name="40202018"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsulterMvtProtheseUC" />
+
+	<bean name="40202019"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ConsulterMvtAnnulationUC" />
+
+	<!-- =========== INIT IHM MVTS ============== -->
+	<bean name="40202003"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMouvementUC" />
+	<bean name="40202004"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtSuppressionUC" />
+	<bean name="40202005"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtDefautRemiseUC" />
+	<bean name="40202006"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtRachatUC" />
+	<bean name="40202007"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtConsignationCNRAUC" />
+	<bean name="40202008"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtDecesUC" />
+
+	<bean name="40202009"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtRemariageUC" />
+
+	<bean name="20200205"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.InitRechercheMouvementUC"
+		singleton="false" />
+	<bean name="40202010"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.InitRechercheParamUC"
+		singleton="false" />
+	<bean name="40202011"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtComplementCNRAUC"
+		singleton="false" />
+	<bean name="40202013"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtProtheseUC"
+		singleton="false" />
+	<!-- <bean name="40202014" -->
+	<!-- class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtRenouvellementProtheseUC" -->
+	<!-- singleton="false" /> -->
+	<bean name="40202012"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtProrataCNRAUC"
+		singleton="false" />
+	<bean name="40202021"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtCalcProrataCNRAUC"
+		singleton="false" />
+	<bean name="40202015"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtAnnulationUC"
+		singleton="false" />
+
+	<bean name="40202014"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.EditerRentierUC"
+		singleton="false" />
+	<bean name="40202016"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtTropPercuUC" />
+	<bean name="40202017"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtRemiseEnCoursUC" />
+	<bean name="40202020"
+		class="eai.devass.gsr.appli.usecase.metier.mouvements.ChercherRentierUC"
+		singleton="false" />
+	<bean name="40202022"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtMajCapitalUC"
+		singleton="false" />
+	<bean name="40202023"
+		class="eai.devass.gsr.appli.usecase.parametrage.ihm.mouvement.InitMvtCNRAReglementaireUC"
+		singleton="false" />
+
+</beans>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.reglement">
+	<class name="Reglement" table="SIN_REGLEMENT">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_REGLEMENT</param>
+			</generator>
+		</id>
+		<property name="numeroQuittance">
+			<column name="NUMEROQUITTANCE" />
+		</property>
+		<property name="adresseBenef">
+			<column name="ADRESSE_BENEF" />
+		</property>
+		<property name="villeBenef">
+			<column name="VILLE_BENEF" />
+		</property>
+		<property name="numeroQuittanceRemplacement">
+			<column name="NUMEROQUITTANCEREMP" />
+		</property>
+		<property name="typeBeneficiaire">
+			<column name="TYPEBENEFICIAIRE" />
+		</property>
+		<property name="nomBeneficiaire">
+			<column name="NOMBENEFICIAIRE" />
+		</property>
+		<property name="nomIntermediaire">
+			<column name="NOMINTERMEDIAIRE" />
+		</property>
+		<property name="codeIntermediaire">
+			<column name="CODEINTERMEDIAIRE" />
+		</property>
+		<property name="dateEmission" update="false">
+			<column name="DATEMISSION" />
+		</property>
+		<property name="dateEtat">
+			<column name="DATEETAT" />
+		</property>
+		<property name="nomUserCreateur" update="false">
+			<column name="NOMUSERCREATEUR" />
+		</property>
+		<property name="codeUserCreateur" update="false">
+			<column name="CODEUSERCREATEUR" />
+		</property>
+		<property name="motifRejet">
+			<column name="MOTIFREJET" />
+		</property>
+		<property name="nomUserModificateur">
+			<column name="NOMUSERMODIFICATEUR" />
+		</property>
+		<property name="codeUserModificateur">
+			<column name="CODEUSERMODIFICATEUR" />
+		</property>
+		<property name="montant">
+			<column name="MONTANT" />
+		</property>
+		<property name="montantRAS">
+			<column name="MONTANTRAS" />
+		</property>
+		<property name="dateCreation" update="false">
+			<column name="DATECREATION" />
+		</property>
+		<property name="dateModification">
+			<column name="DATEMODIFICATION" />
+		</property>
+		<property name="service">
+			<column name="SERVICE" />
+		</property>
+		<property name="dateReglement">
+			<column name="DATEREGLEMENT" />
+		</property>
+		<property name="modeReglement">
+			<column name="MODEREGLEMENT" />
+		</property>
+		<property name="dateEtablissement">
+			<column name="DATEETABLISSEMENT" />
+		</property>
+		<property name="codeBeneficiaire">
+			<column name="CODEBENEFICAIRE" />
+		</property>
+		<property name="choixTypeCheque">
+			<column name="TYPECHEQUE" />
+		</property>
+		<property name="vosReference">
+			<column name="VOSREFERENCES" />
+		</property>
+		<!-- Direct -->
+		<property name="codeChefGreffier">
+			<column name="CODECHEFGREFFIER" />
+		</property>
+		<property name="nomChefGreffier">
+			<column name="NOMCHEFGREFFIER" />
+		</property>
+		<property name="nomBarreau">
+			<column name="NOMBARREAU" />
+		</property>
+		<property name="codeBarreau">
+			<column name="CODEBARREAU" />
+		</property>
+		<property name="nomIntermediaireRgl">
+			<column name="NOMINTERMEDIAIRERGL" />
+		</property>
+		<property name="codeIntermediaireRgl">
+			<column name="CODEINTERMEDIAIRERGL" />
+		</property>
+		<!-- Auxilaire -->
+		<property name="referenceAuxiliaire">
+			<column name="REFERENCEAUXILIAIRE" />
+		</property>
+		<property name="nomMandataire">
+			<column name="NOMMANDATAIRE" />
+		</property>
+		<property name="codeMandataire">
+			<column name="CODEMANDATAIRE" />
+		</property>
+		<property name="nomAuxiliaire">
+			<column name="NOMAUXILIAIRE" />
+		</property>
+		<property name="codeAuxiliaire">
+			<column name="CODEAUXILIAIRE" />
+		</property>
+		<property name="numeroMission">
+			<column name="NUMEROMISSION" />
+		</property>
+		<property name="dateNote">
+			<column name="DATENOTE" />
+		</property>
+		<!-- Intermedaire -->
+		<property name="numeroBordereau">
+			<column name="NUMEROBORDEREAU" />
+		</property>
+		<property name="dateBordereau">
+			<column name="DATEBORDEREAU" />
+		</property>
+		<property name="numCheque">
+			<column name="NUMCHEQUE" />
+		</property>
+
+		<property name="sousTypeQuittance">
+			<column name="SOUSTYPEQUITTANCE" />
+		</property>
+		<!-- Recuperation -->
+		<many-to-one name="refNatureRecuperation" column="NATURERECUPERATION"
+			class="eai.devass.sinistreat.appli.modele.parametrage.NatureRecuperation"
+			fetch="join" not-found="ignore" />
+		<property name="numeroRemise">
+			<column name="NUMEROREMISE" />
+		</property>
+		<property name="dateRemise">
+			<column name="DATEREMISE" />
+		</property>
+		<property name="emetteur">
+			<column name="EMETTEUR" />
+		</property>
+		<property name="codeAvocatAdverse">
+			<column name="CODEAVOCATADVERSE" />
+		</property>
+		<property name="nomAvocatAdverse">
+			<column name="NOMAVOCATADVERSE" />
+		</property>
+		<property name="numeroRecours">
+			<column name="NUMERORECOURS" />
+		</property>
+		<property name="nomPartieAdverse">
+			<column name="NOMPARTIEADVERSE" />
+		</property>
+		<property name="typePartieAdverse">
+			<column name="TYPEPARTIEADVERSE" />
+		</property>
+		<property name="codePartieAdverse">
+			<column name="CODEPARTIEADVERSE" />
+		</property>
+		<property name="motifTropPercu">
+			<column name="MOTIFTROPPERCU" />
+		</property>
+		<property name="motifAnnulation">
+			<column name="MOTIFANNULATION" />
+		</property>
+		<property name="idOrdonnancement">
+			<column name="IDORDONNANCEMENT" />
+		</property>
+		<property name="avocatTiers">
+			<column name="AVOCATTIERS" />
+		</property>
+		<property name="reference">
+			<column name="REFERENCE" />
+		</property>
+		<property name="typeIntermediaire">
+			<column name="TYPEINTERMEDIAIRE" />
+		</property>
+		<property name="typeIntermediaireRgl">
+			<column name="TYPEINTERMEDIAIRERGL" />
+		</property>
+		<property name="dateSort">
+			<column name="DATESORT" />
+		</property>
+		<property name="sort">
+			<column name="SORT" />
+		</property>
+		<!--WMOS:15/09/2015 -Début 'Evol Réglementaire l'ajout d'un champ date 
+			signature quittance(champ modifiable quelque soit l'état de la quittance)' -->
+		<property name="dateSignature">
+			<column name="DATESIGNATURE" />
+		</property>
+		<property name="zoneARisque">
+			<column name="ZONEARISQUE" />
+		</property>
+		<property name="isComplement">
+			<column name="ISCOMPLEMENT" />
+		</property>
+		<property name="regler">
+			<column name="REGLER" />
+		</property>
+		
+		<property name="ras">
+			<column name="RAS" />
+		</property>
+		<!--WMOS:15/09/2015 -Fin 'Evol Réglementaire' -->
+		<!-- REF -->
+		<many-to-one name="refSinistre" column="IDSINISTRE"
+			class="eai.devass.sinistreat.appli.modele.metier.sinistre.Sinistre"
+			update="false" />
+		<!-- <many-to-one name="refOrdonnancement" column="IDORDONNANCEMENT" class="eai.devass.sinistreat.appli.modele.metier.reglement.Ordonnancement" 
+			fetch="join" not-found="ignore" /> -->
+
+		<many-to-one name="refEtatReglement" column="ETATREGLEMENT"
+			class="eai.devass.sinistreat.appli.modele.parametrage.EtatRgl" fetch="join"
+			not-found="ignore" />
+		<many-to-one name="refTypeReglement" column="TYPEREGLEMENT"
+			class="eai.devass.sinistreat.appli.modele.parametrage.TypeReglement"
+			fetch="join" not-found="ignore" />
+		<many-to-one name="refTypeQuittance" column="TYPEQUITTANCE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.TypeQuittance"
+			fetch="join" not-found="ignore" />
+		<bag name="listDetailReglement" inverse="true" cascade="delete-orphan,all"
+			order-by="ID asc">
+			<key column="IDREGLEMENT" />
+			<one-to-many
+				class="eai.devass.sinistreat.appli.modele.metier.reglement.DetailReglement" />
+		</bag>
+		<many-to-one name="refBanque" column="CODEBANQUE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.Banque" fetch="join"
+			not-found="ignore" />
+
+		<property name="dateReception">
+			<column name="DATE_RECEPTION" />
+		</property>
+		<property name="typeBeneficiaireLettre">
+			<column name="TYPE_BENEFICIAIRE_LETTRE" />
+		</property>
+		<property name="nomBeneficiaireLettre">
+			<column name="NOM_BENEFICIAIRE_LETTRE" />
+		</property>
+		<property name="refProcedure">
+			<column name="REF_PROCEDURE" />
+		</property>
+		<property name="salaireMensuel">
+			<column name="SALAIRE_MENSUEL" />
+		</property>
+		<property name="renteAnnuelle">
+			<column name="RENTE_ANNUELLE" />
+		</property>
+		
+		<!--SEL:21/12/2017 -Début 'Evol Automatisation ITT' -->
+		<property name="dateProchaineEcheance">
+			<column name="DATE_PROCHAINE_ECHEANCE" />
+		</property>
+		<property name="emissionITT">
+			<column name="EMISSION_ITT" />
+		</property>
+		<property name="creatorFirstQtc">
+			<column name="CREATOR_FIRST_QTC" />
+		</property>
+		<!--SEL:21/12/2017 -Fin 'Evol Automatisation ITT' -->
+		<!--SEL:19/02/2018 -Début 'Evol SMIG' -->
+		<property name="smig">
+			<column name="SMIG" />
+		</property>
+		<property name="rappel">
+			<column name="RAPPEL" />
+		</property>
+		<!--SEL:19/02/2018 -Début 'Evol SMIG' -->
+		<!--SEL:26/06/2018 -Début 'Changement du bloc beneficiaire lettre' -->
+		<property name="villeBeneficiaireLettre">
+			<column name="villeBeneficiaireLettre" />
+		</property>
+		<property name="adresseBeneficiaireLettre">
+			<column name="adresseBeneficiaireLettre" />
+		</property>
+		<property name="codeIntermediaireBL">
+			<column name="codeIntermediaireBL" />
+		</property>
+		<property name="codePrestataireBL">
+			<column name="codePrestataireBL" />
+		</property>
+			<property name="typeDestinataireCheque">
+			<column name="TYPEDESTINATAIRECHEQUE" />
+		</property>
+		<property name="nomDestinataireCheque">
+			<column name="NOMDESTINATAIRECHEQUE" />
+		</property>
+		<property name="villeDestinataireCheque">
+			<column name="VILLEDESTINATAIRECHEQUE" />
+		</property>
+		<property name="adresseDestinataireCheque">
+			<column name="ADRESSEDESTINATAIRECHEQUE" />
+		</property>
+		<property name="codeIntermediaireDC">
+			<column name="CODEINTERMEDIAIREDC" />
+		</property>
+		<property name="codePrestataireDC">
+			<column name="CODEPRESTATAIREDC" />
+		</property>
+		<property name="dateEditionIntermediaire">
+			<column name="DATE_EDITION_INTERMEDIAIRE" />
+		</property>
+		<!--Evol MAD 21/06/2021 -->
+		<property name="nbRelance">
+			<column name="NBRELANCE" />
+		</property>
+
+		<bag name="listFraisMedicaux" inverse="true" cascade="delete-orphan,all"
+			order-by="ID asc">
+			<key column="ID_REGLEMENT" />
+			<one-to-many
+				class="eai.devass.sinistreat.appli.modele.metier.reglement.FraisMedicaux" />
+		</bag>
+		
+		<bag name="listFraisFuneraire" inverse="true" cascade="delete-orphan,all"
+			order-by="ID asc">
+			<key column="ID_REGLEMENT" />
+			<one-to-many
+				class="eai.devass.sinistreat.appli.modele.metier.reglement.FraisFuneraire" />
+		</bag>
+		<!--SEL:26/06/2018 -Début 'Changement du bloc beneficiaire lettre' -->
+				<bag name="reglementPieceAt" inverse="true" cascade="all">
+			<key column="ID_REGLEMENT" />
+			<one-to-many
+				class="eai.devass.sinistreat.appli.modele.metier.reglement.ReglementPieceAt" />
+		</bag>
+	</class>
+</hibernate-mapping>

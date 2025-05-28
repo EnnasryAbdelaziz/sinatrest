@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="eai.devass.edition.modele" auto-import="false">
+	<class name="Template" table="SIN_TEMPLATE">
+
+		
+		<id name="id" type="long">
+			<column name="ID" precision="22" scale="0" />
+			<generator class="increment" />
+		</id>
+		
+		<property name="code" column="CODE" />
+		<property name="fichierTemplate" type="blob" column="FICHIER_TEMPLATE"/>
+		<property name="description" column="DESCRIPTION" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.contentieux">
+	<class name="ProcedureJudiciaire" table="SIN_RECOURS_PROC">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_RECOURS_PROC</param>
+			</generator>
+		</id>
+     <property name="numeroDossierTribunal" >
+         <column name="NUMERODOSSIERTRIBUNAL"/>
+      </property>       
+      <property name="lettreInstruction" >
+         <column name="LETTREINSTRUCTION"/>
+      </property>       
+      <property name="decisionCompagnie" >
+         <column name="DECISIONCOMPAGNIE"/>
+      </property>     
+      <property name="resultatJugement" >
+         <column name="RESULTATJUGEMENT"/>
+      </property>       
+      <property name="requeteAdversaire" >
+         <column name="REQUETEADVERSAIRE"/>
+      </property>  
+      <property name="dateDepot" >
+         <column name="DATEDEPOT"/>
+      </property>  
+      <property name="dateReception" >
+         <column name="DATERECEPTION"/>
+      </property>              
+      <property name="dateCreation" update="false">
+         <column name="DATECREATION"/>
+      </property>               
+      <property name="lettreAgent" >
+         <column name="LETTREAGENT"/>
+      </property>    
+      <property name="nomAvocatAdverse" >
+         <column name="NOMAVOCATADVERSE"/>
+      </property>               
+      <property name="codeAvocatConseil" >
+         <column name="CODEAVOCATCONSEIL"/>
+      </property> 
+      <property name="nomAvocatConseil" >
+         <column name="NOMAVOCATCONSEIL"/>
+      </property>               
+      <property name="codeAvocatAdverse" >
+         <column name="CODEAVOCATADVERSE"/>
+      </property>       
+      <property name="requeteAvocat" >
+         <column name="REQUETEAVOCAT"/>
+      </property>       
+      <property name="compteRenduAvocat" >
+         <column name="COMPTERENDUAVOCAT"/>
+      </property>  
+      <property name="decisionAdverse" >
+         <column name="DECISIONADVERSE"/>
+      </property>               
+      <property name="motifDecisionCie" >
+         <column name="MOTIFDECISIONCIE"/>
+      </property>    
+      <property name="dateReceptionCopie" >
+         <column name="DATERECEPTIONCOPIE"/>
+      </property>    
+      <property name="reglementAmiable" >
+         <column name="REGLEMENTAMIABLE"/>
+      </property>                  
+      <property name="dateAcceptRglAmiable" >
+         <column name="DATEACCEPTRGLAMIABLE"/>
+      </property> 
+      <property name="statutRglAmiable" >
+         <column name="STATUTRGLAMIABLE"/>
+      </property>       
+      <property name="actionCivile" >
+         <column name="ACTIONCIVILE"/>
+      </property> 
+      <property name="actionPublique" >
+         <column name="ACTIONPUBLIQUE"/>
+      </property>  
+      <property name="montantActionPublique" >
+         <column name="MONTANTACTIONPUBLIQUE"/>
+      </property>        
+      <property name="competenceTerritorial">
+         <column name="COMPETENCETRT"/>
+      </property>
+      <property name="lienCausalite">
+         <column name="LIENCAUSALITE"/>
+      </property> 
+      <property name="dateAssignation">
+         <column name="DATEASSIGNATION"/>
+      </property> 
+      <property name="userCreateur">
+         <column name="USERCREATEUR"/>
+      </property> 
+      <property name="userModificateur">
+         <column name="USERMODIFICATEUR"/>
+      </property>   
+      <property name="motifModification">
+         <column name="MOTIFMODIFICATION"/>
+      </property>   
+      <property name="idProcedure">
+         <column name="IDPROCEDURE"/>
+      </property>                  	
+	 <many-to-one name="refJuridiction" column="IDJURIDICTION" class="eai.devass.sinistreat.appli.modele.parametrage.Tribunal" not-found="ignore" />
+	 <many-to-one name="refTypeJuridiction" column="IDTYPEJURIDICTION" class="eai.devass.sinistreat.appli.modele.parametrage.TypeJuridiction" fetch="join" not-found="ignore" lazy="false"/>
+	 <many-to-one name="refNatureDossier" column="IDNATUREDOSSIER" class="eai.devass.sinistreat.appli.modele.parametrage.NatureDossier" not-found="ignore"/>
+	 <many-to-one name="refNatureProcedure" column="IDNATUREPROCEDURE" class="eai.devass.sinistreat.appli.modele.parametrage.NatureProcedure" not-found="ignore"/>
+	 <many-to-one name="refRecours" column="IDRECOURS" class="eai.devass.sinistreat.appli.modele.metier.contentieux.Recours" />             
+  	 <many-to-one name="refGestionnaire" column="USERGESTIONNAIRE" class="eai.devass.sinistreat.appli.modele.parametrage.GestionnaireRelance" not-found="ignore"/>
+         
+      <bag name="listeAudiences" inverse="true" order-by="ID asc">
+      	<key column="IDPROCEDUREJUDICIAIRE"/>
+      	<one-to-many class="eai.devass.sinistreat.appli.modele.metier.contentieux.AudienceJugement"/>
+      </bag> 
+      <bag name="listePartieAdverses" inverse="true" order-by="ID asc" lazy="false" cascade="all">
+      	<key column="IDPROCEDUREJUDICIAIRE"/>
+      	<one-to-many class="eai.devass.sinistreat.appli.modele.metier.contentieux.PartieAdverseJud"/>
+      </bag> 
+	</class>
+</hibernate-mapping>

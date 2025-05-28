@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- ============ Services fonctionnels ============= -->
+
+
+	<bean name="701"
+		class="eai.devass.sinistreat.appli.usecase.metier.mission.CreateMissionUC"
+		singleton="false" />
+	<bean name="702"
+		class="eai.devass.sinistreat.appli.usecase.metier.mission.ModifierMissionUC"
+		singleton="false" />
+	<bean name="703"
+		class="eai.devass.sinistreat.appli.usecase.metier.mission.RechercherMissionUC"
+		singleton="false" />
+	<bean name="704"
+		class="eai.devass.sinistreat.appli.usecase.metier.mission.RechercheNatureMissionUC"
+		singleton="false" />
+	<bean name="705"
+		class="eai.devass.sinistreat.appli.usecase.metier.mission.RechercheRefNatMissionUC"
+		singleton="false" />
+	<!-- IHM -->
+	<bean name="1026"
+		class="eai.devass.sinistreat.appli.usecase.ihm.InitCreateMissionUC"
+		singleton="false" />
+	<bean name="1027"
+		class="eai.devass.sinistreat.appli.usecase.ihm.InitModifierMissionUC"
+		singleton="false" />
+</beans>

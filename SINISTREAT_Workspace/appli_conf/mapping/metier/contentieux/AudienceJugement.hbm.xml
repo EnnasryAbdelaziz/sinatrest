@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="eai.devass.sinistreat.appli.modele.metier.contentieux">
+	<class name="AudienceJugement" table="SIN_RECOURS_AUDIENCE">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_RECOURS_AUD</param>
+			</generator>
+		</id>
+		<property name="etatEnCoursAUdience">
+			<column name="ETAT_ENCOURS_AUD" />
+		</property>
+
+		<property name="dateConvocation">
+			<column name="DATECONVOCATION" />
+		</property>
+		<property name="heureConvocation">
+			<column name="HEURECONVOCATION" />
+		</property>
+		<property name="numeroSalleAudience">
+			<column name="NUMEROSALLEAUDIENCE" />
+		</property>
+		<property name="dateNotification">
+			<column name="DATENOTIFICATION" />
+		</property>
+		<property name="dateCreation">
+			<column name="DATECREATION" />
+		</property>
+		<property name="dateModification">
+			<column name="DATEMODIFICATION" />
+		</property>
+		<property name="userCreateur">
+			<column name="USERCREATEUR" />
+		</property>
+		<property name="userModificateur">
+			<column name="USERMODIFICATEUR" />
+		</property>
+		<property name="motifModification">
+			<column name="MOTIFMODIFICATION" />
+		</property>
+		<property name="idAudience">
+			<column name="IDAUDIENCE" />
+		</property>
+		<!-- Jugement -->
+		<property name="idJugement">
+			<column name="IDJUGEMENT" />
+		</property>
+		<property name="numeroJugement">
+			<column name="NUMEROJUGEMENT" />
+		</property>
+		<property name="dateJugement">
+			<column name="DATEJUGEMENT" />
+		</property>
+		<property name="nomJuge">
+			<column name="NOMJUGE" />
+		</property>
+		<property name="dateNotificationJugement">
+			<column name="DATENOTIFICATIONJUGEMENT" />
+		</property>
+		<property name="dateDecision">
+			<column name="DATEDECISION" />
+		</property>
+		<property name="motifDecisionCompagnie">
+			<column name="MOTIFDECISIONCOMPAGNIE" />
+		</property>
+
+		<property name="resultatJugement">
+			<column name="RESULTATJUGEMENT" />
+		</property>
+		<property name="salaireJugement">
+			<column name="SALAIREJUGEMENT" />
+		</property>
+		<property name="ippJugement">
+			<column name="IPPJUGEMENT" />
+		</property>
+		<property name="dateDepartRente">
+			<column name="DATEDEPARTRENTE" />
+		</property>
+		<property name="montantJuge">
+			<column name="MONTANJUGE" />
+		</property>
+		<property name="motifConvocation">
+			<column name="MOTIFCONVOCATION" />
+		</property>
+
+		<property name="ReserveOrdinaire">
+			<column name="RESERVEORDINAIRE" />
+		</property>
+		<property name="ReserveGrave">
+			<column name="RESERVEGRAVE" />
+		</property>
+		<property name="ReserveProthese">
+			<column name="RESERVEPROTHESE" />
+		</property>
+		<property name="montant">
+			<column name="MONTANT" />
+		</property>
+		<property name="codeBancaire">
+			<column name="CODEBANCAIRE" />
+		</property>
+		<property name="codeIntermediaireTS">
+			<column name="CODEINTERMEDIAIRETS" />
+		</property>
+		<property name="nomIntermediaireTS">
+			<column name="NOMINTERMEDIAIRETS" />
+		</property>
+		
+		<property name="montantRente">
+			<column name="MONTANTRENTE" />
+		</property>
+		
+		<property name="quotePart">
+			<column name="QUOTEPART" />
+		</property>
+		
+		<many-to-one name="refProcedureJudiciaire" column="IDPROCEDUREJUDICIAIRE"
+			class="eai.devass.sinistreat.appli.modele.metier.contentieux.ProcedureJudiciaire" />
+		<many-to-one name="refNatureAudience" column="IDNATUREAUDIENCE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.NatureAudience"
+			lazy="proxy" cascade="save-update" fetch="join" not-found="ignore"/>
+		<many-to-one name="refSuiteJugement" column="IDSUITEJUGEMENT"
+			class="eai.devass.sinistreat.appli.modele.parametrage.SuiteJugement"
+			not-found="ignore" />
+		<many-to-one name="refDecision" column="IDDECISION"
+			class="eai.devass.sinistreat.appli.modele.parametrage.Decision"
+			not-found="ignore" />
+		<many-to-one name="partResponsabilite" column="PARTRESPONSABILITE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.PronosticRC"
+			not-found="ignore" />
+		<many-to-one name="refSortJugement" column="IDSORTJUGEMENT"
+			class="eai.devass.sinistreat.appli.modele.parametrage.SortJugement"
+			lazy="proxy" cascade="save-update" fetch="join" not-found="ignore"/>
+		<many-to-one name="refTiersSaisi" column="IDTIERSSAISI"
+			class="eai.devass.sinistreat.appli.modele.parametrage.TiersSaisi"
+			lazy="proxy" cascade="save-update" fetch="join" not-found="ignore"/>
+		<many-to-one name="refBanque" column="REFBANQUE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.Banque"
+			lazy="proxy" cascade="save-update" fetch="join" not-found="ignore"/>
+		<many-to-one name="refTypeRente" column="REFTYPERENTE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.TypeRente"
+			lazy="proxy" cascade="save-update" fetch="join" not-found="ignore"/>
+		<many-to-one name="refCieCondamnee" column="REFCIECONDAMNEE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.CieCondamnee"
+			lazy="proxy" cascade="save-update" fetch="join" not-found="ignore"/>
+		<many-to-one name="refGestionnaireTraitement" column="REFGESTIONNAIRETRAITEMENT"
+			class="eai.devass.sinistreat.appli.modele.parametrage.GestionnaireTraitement"
+			lazy="proxy" cascade="save-update" fetch="join" not-found="ignore"/>
+			
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access='property'
+	auto-import="false">
+	<class name="eai.devass.gsr.appli.modele.metier.mouvements.Heritier"
+		table="GSR_Heritier">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_GSR_HERITIER</param>
+			</generator>
+			
+		</id>
+		<property name="beneficiaire" column="beneficiaire" />
+		<property name="nomBeneficiaire" column="nom_beneficiaire" />
+		<property name="prenomBeneficiaire" column="prenom_beneficiaire" />
+		<property name="numCIN" column="num_cin" />
+		<property name="quotePart" column="quote_part" />
+		<property name="montant" column="montant" />
+		<property name="dateCreation" column="date_creation" />
+
+
+
+		<many-to-one name="refMvtDecesRentier"
+			class="eai.devass.gsr.appli.modele.metier.mouvements.MvtDecesRentier"
+			column="IdsMvtDecesRentier" lazy="false" />
+	   <many-to-one name="refQuittanceGSR"
+			class="eai.devass.gsr.appli.modele.metier.reglement.QuittanceGsr"
+			column="id_quittance" lazy="false" />
+			
+	
+		<many-to-one name="refStatutHeritier"
+			class="eai.devass.gsr.appli.modele.parametrage.StatutHeritier" column="statut"
+			lazy="false"
+			 />
+	</class>
+</hibernate-mapping>

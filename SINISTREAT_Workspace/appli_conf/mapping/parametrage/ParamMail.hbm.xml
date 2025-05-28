@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="eai.devass.sinistreat.appli.modele.parametrage.ParamMail"
+		table="PARAM_MAIL">
+		<id name="id" type="long">
+			<column name="id" length="100" />
+			<generator class="assigned" />
+		</id>
+		<property name="host" type="string">
+			<column name="host" />
+		</property>
+		<property name="port" type="string">
+			<column name="port" />
+		</property>
+		<property name="username" type="string">
+			<column name="username" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" />
+		</property>
+	</class>
+</hibernate-mapping>

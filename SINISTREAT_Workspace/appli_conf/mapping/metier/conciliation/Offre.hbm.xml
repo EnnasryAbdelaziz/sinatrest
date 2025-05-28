@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="eai.devass.sinistreat.appli.modele.metier.conciliation">
+	<class name="Offre" table="SIN_OFFRE">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_SIN_OFFRE</param>
+			</generator>
+		</id>
+
+		<property name="salaireAnnuel">
+			<column name="SALAIRE_ANNUEL" />
+		</property>
+
+		<property name="salaireUtile">
+			<column name="SALAIRE_UTILE" />
+		</property>
+
+		<property name="ipp">
+			<column name="IPP" />
+		</property>
+
+		<property name="ippOffre">
+			<column name="IPP_OFFRE" />
+		</property>
+
+		<property name="autreTauxIpp">
+			<column name="AUTRE_TAUX_IPP" />
+		</property>
+		<property name="sommeReserve">
+			<column name="SOMME_RESERVE" />
+		</property>
+
+		<property name="dateOffre">
+			<column name="DATE_OFFRE" />
+		</property>
+
+		<property name="dateMotif">
+			<column name="DATE_MOTIF" />
+		</property>
+
+		<property name="capitalRachat">
+			<column name="CAPITALE_RACHAT" />
+		</property>
+
+		<property name="montantRente">
+			<column name="MONTANT_RENTE" />
+		</property>
+		<property name="reserveOffre">
+			<column name="RESERVE_OFFRE" />
+		</property>
+		<property name="montantReserve">
+			<column name="MONTANT_RESERVE" />
+		</property>
+
+		<property name="montantArrerageAVC">
+			<column name="MONTANT_ARRERAGE_AVANTCONSTIT" />
+		</property>
+
+		<property name="dateDepartRente">
+			<column name="DATE_DEPART_RENTE" />
+		</property>
+
+		<property name="dateCreation">
+			<column name="DATE_CREATION" />
+		</property>
+
+		<property name="dateModification">
+			<column name="DATE_MODIFICATION" />
+		</property>
+
+		<property name="renteTrimistriel">
+			<column name="RENTE_TRIMISTRIEL" />
+		</property>
+
+		<property name="observation">
+			<column name="OBSERVATION" />
+		</property>
+
+		<property name="observationOffre">
+			<column name="OBSERVATION_OFFRE" />
+		</property>
+
+		<property name="codeSas">
+			<column name="CODESAS" />
+		</property>
+	
+		<property name="dateSignaturePv">
+			<column name="DATE_SIGNATUREPV" />
+		</property>	
+		
+		<property name="etatOffreConciliation">
+			<column name="ETAT_OFFRE_CONCILIATION" />
+		</property>	
+		
+		
+		<many-to-one name="refConciliation" column="ID_CONCILIATION"
+			class="eai.devass.sinistreat.appli.modele.metier.conciliation.Conciliation" />
+
+		<many-to-one name="refMotifOffre" column="ID_MOTIF_OFFRE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.MotifOffre"
+			fetch="join" not-found="ignore" />
+			
+		<many-to-one name="refTypeProcedure" column="ID_TYPE_PROCEDURE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.TypeProcedure"
+			fetch="join" not-found="ignore" />
+	  
+	   <many-to-one name="refResultatOffre" column="ID_RESULTAT" 
+			class="eai.devass.sinistreat.appli.modele.metier.conciliation.SinResultatOffre"
+			fetch="join" not-found="ignore" />
+	   
+	   <bag name="listAyantDroit" inverse="true" cascade="all">
+      	 <key column="ID_OFFRE" />
+         <one-to-many class="eai.devass.sinistreat.appli.modele.metier.conciliation.AyantDroitOffre"/>
+       </bag>
+         
+       <bag name="listSinMotifOffre" inverse="true" cascade="all" order-by="ID desc">
+      	 <key column="ID_OFFRE" />
+         <one-to-many class="eai.devass.sinistreat.appli.modele.metier.conciliation.SinMotifOffre"/>
+       </bag>
+       
+		<property name="montantARegler">
+			<column name="montantARegler" />
+		</property>	
+		<property name="ittRegle">
+			<column name="ittRegle" />
+		</property>	
+		<property name="avp">
+			<column name="avp" />
+		</property>	
+		
+		<property name="montantAReglerProthese">
+			<column name="montantAReglerProthese" />
+		</property>	
+		<property name="protheseRegle">
+			<column name="protheseRegle" />
+		</property>	
+		<property name="avpProthese">
+			<column name="avpProthese" />
+		</property>	
+		
+		<property name="codeMedecinControleur">
+			<column name="codeMedecinControleur" />
+		</property>	
+		<property name="nomMedecinControleur">
+			<column name="nomMedecinControleur" />
+		</property>	
+		<property name="coefficientAge">
+			<column name="coefficientAge" />
+		</property>	
+		<property name="dateCompletudeDossier">
+			<column name="dateCompletudeDossier" />
+		</property>	
+       <bag name="listSinistreAnterieur" inverse="true" cascade="delete-orphan,all" order-by="ID desc">
+      	 <key column="REF_OFFRE" />
+         <one-to-many class="eai.devass.sinistreat.appli.modele.metier.conciliation.SinAnterieurOffre"/>
+       </bag>
+                          
+	</class>
+</hibernate-mapping>

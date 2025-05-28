@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+				
+<hibernate-mapping package="eai.devass.edition.modele" auto-import="false">
+	<class name="Recap" table="SIN_RECAP">
+	
+		<id name="id" type="long">
+			<column name="ID" precision="22" scale="0" />
+			<generator class="increment" />
+		</id>
+		
+		<discriminator column="TYPE_FILLE" type="string" force="true"/>
+		
+		<property name="description" column="DESCRIPTION" />
+		
+		<bag name="refsVariables" lazy="false" cascade="all-delete-orphan" order-by="ORDRE_AFFICHAGE asc">
+			<key column="ID_SIN_RECAP" />
+			<one-to-many class="eai.devass.edition.modele.Variable" />
+		</bag>
+		
+		<bag name="refsRecapColonnes" lazy="false" cascade="all-delete-orphan">
+			<key column="ID_SIN_RECAP" />
+			<one-to-many class="eai.devass.edition.modele.RecapColonne" />
+		</bag>
+		
+		<subclass
+			name="eai.devass.edition.modele.RecapPage"
+			discriminator-value="RECAP_PAGE">
+		</subclass>
+		
+		<subclass
+			name="eai.devass.edition.modele.RecapGenerale"
+			discriminator-value="RECAP_GENERALE">
+		</subclass>
+	</class>
+</hibernate-mapping>

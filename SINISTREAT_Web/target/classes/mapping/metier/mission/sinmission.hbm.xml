@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.mission">
+	<class name="MissionAT" table="SIN_MISSIONAT">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_MISSIONAT</param>
+			</generator>
+		</id>
+		<property name="idMission">
+			<column name="IDMISSION" />
+		</property>
+		<property name="codeNatureMission">
+			<column name="CODENATUREMISSION" />
+		</property>
+		<property name="libelleNatureMission">
+			<column name="LIBELLENATUREMISSION" />
+		</property>
+		<property name="instructions">
+			<column name="INSTRUCTIONS" />
+		</property>
+		<property name="dateMission">
+			<column name="DATEMISSION" />
+		</property>
+		<property name="dateEtatMission">
+			<column name="DATEETATMISSION" />
+		</property>
+		<property name="commentaire">
+			<column name="COMMENTAIRE" />
+		</property>
+		<property name="reponseRecu">
+			<column name="REPONSERECU" />
+		</property>
+		<property name="reponse">
+			<column name="REPONSE" />
+		</property>
+		<property name="dateReponse">
+			<column name="DATEREPONSE" />
+		</property>
+		<property name="montantFacture">
+			<column name="MONTANTFACTURE" />
+		</property>
+		<property name="montantAPaye">
+			<column name="MONTANTPAYE" />
+		</property>
+		<property name="idReponse">
+			<column name="IDREPONSE" />
+		</property>
+		
+		<many-to-one name="refSinistre" column="IDSINISTRE"
+			class="eai.devass.sinistreat.appli.modele.metier.sinistre.Sinistre"
+			fetch="join" />
+			
+		<property name="codePrestataire" column="CODPRESTATAIRE" />
+		
+		
+		<many-to-one name="refEtatMission" column="ETATMISSION"
+			class="eai.devass.sinistreat.appli.modele.parametrage.EtatMission"
+			fetch="join" not-found="ignore" />
+		<bag name="listPrestation" inverse="true" cascade="all" order-by="ID asc"
+			lazy="false">
+			<key column="IDMISSION" />
+			<one-to-many
+				class="eai.devass.sinistreat.appli.modele.metier.mission.MissionPresation" />
+		</bag>
+		<bag name="listReference" inverse="true" cascade="all" order-by="ID asc"
+			lazy="false">
+			<key column="IDMISSION" />
+			<one-to-many
+				class="eai.devass.sinistreat.appli.modele.metier.mission.ReferenceMissionAT" />
+		</bag>
+
+	</class>
+</hibernate-mapping>

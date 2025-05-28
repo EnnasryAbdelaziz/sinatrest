@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 sept. 2009 15:38:55 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="eai.devass.sinistreat.appli.modele.parametrage.TypeAccident" table="PRM_TYPEACCIDENT">
+	      <id name="code" >
+	         <column name="CODE" />
+	         <generator class="assigned" />
+	      </id>
+        <property name="libelle" type="string">
+            <column name="LIBELLE" length="200" />
+        </property>        
+    </class>
+</hibernate-mapping>

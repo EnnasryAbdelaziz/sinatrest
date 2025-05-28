@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.reglement">
+	<class name="Ordonnancement" table="SIN_ORDONNANCEMENT">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_ORDONNANCEMENT</param>
+			</generator>
+		</id>
+
+		<property name="numeroOrdonnacement" update="false">
+			<column name="NUMERORDONNACEMENT" />
+		</property>
+		<property name="vosReference">
+			<column name="VOSREFERENCE" />
+		</property>
+		<property name="compteDe">
+			<column name="COMPTEDE" />
+		</property>
+		<property name="envoyerA">
+			<column name="ENVOYERA" />
+		</property>
+		<property name="nomBeneficiaire">
+			<column name="NOMBENEFICIAIRE" />
+		</property>
+		<property name="barre">
+			<column name="BARRE" />
+		</property>
+		<property name="adresse">
+			<column name="ADRESSE" />
+		</property>
+		<property name="ville">
+			<column name="VILLE" />
+		</property>
+		<property name="libelleNature">
+			<column name="LIBELLENATURE" />
+		</property>
+		<property name="montant">
+			<column name="MONTANT" />
+		</property>
+		<property name="codeService">
+			<column name="CODESERVICE" />
+		</property>
+		<property name="numCheque">
+			<column name="NUMCHEQUE" />
+		</property>
+
+		<property name="codeUser" update="false">
+			<column name="CODEUSER" />
+		</property>
+
+		<property name="codeSasUser" update="false">
+			<column name="CODESASUSER" />
+		</property>
+		<property name="modeReglement">
+			<column name="MODEREGLEMENT" />
+		</property>
+		<property name="service">
+			<column name="SERVICE" />
+		</property>
+		
+		<many-to-one name="refEtat" column="ETATORD"
+			class="eai.devass.sinistreat.appli.modele.parametrage.EtatOrd"
+			update="false" />
+	</class>
+</hibernate-mapping>

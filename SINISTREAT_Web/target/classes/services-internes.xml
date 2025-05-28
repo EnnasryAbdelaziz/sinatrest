@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+
+	<!-- ============ Services RMI Serveurs ============= -->
+	<bean id="registry" class="org.springframework.remoting.rmi.RmiRegistryFactoryBean"> 
+		<property name="port" value="1121" /> 
+	</bean>
+		
+	<!-- ============ Service Creation Recours entrant ============= -->
+<!--	<bean id="gestionATSinistre" class="eai.devass.appli.atsinistre.services.ServiceGestionATSinistre"/> -->
+<!--	<bean class="org.springframework.remoting.rmi.RmiServiceExporter"> -->
+<!--		<property name="serviceName" value="gestionRecours" /> -->
+<!--		<property name="service" ref="gestionRecours" /> -->
+<!--		<property name="serviceInterface" value="eai.devass.appli.atsinistre.services.pub.IServiceGestionATSinistre" /> -->
+<!--		<property name="registry" ref="registry" /> -->
+<!--	</bean>-->
+	
+		<!-- ============ Service Creation Procedure Judiciaire ============= -->
+<!--	<bean id="gestionProcedureJudiciaire" class="eai.devass.recoursentrant.application.services.ServiceGestionProcedureJudiciaire"/> -->
+<!--	<bean class="org.springframework.remoting.rmi.RmiServiceExporter"> -->
+<!--		<property name="serviceName" value="gestionProcedureJudiciaire" /> -->
+<!--		<property name="service" ref="gestionProcedureJudiciaire" /> -->
+<!--		<property name="serviceInterface" value="eai.devass.recoursentrant.application.services.pub.IServiceGestionProcedureJudiciaire" /> -->
+<!--		<property name="registry" ref="registry" />-->
+<!--	</bean>-->
+
+	<!-- ============ Service complement quittance ============= -->
+	<bean id="getComplementQuittance" class="eai.devass.sinistreat.appli.services.impl.ComplementQuittanceService"/> 
+	<bean class="org.springframework.remoting.rmi.RmiServiceExporter"> 
+		<property name="serviceName" value="getComplementQuittance" /> 
+		<property name="service" ref="getComplementQuittance" /> 
+		<property name="serviceInterface" value="eai.devass.sinistreat.appli.services.IComplementQuittanceService" /> 
+		<property name="registry" ref="registry" />
+	</bean>
+	
+	<!-- ============ Services GSR ============= -->
+	<bean class="org.springframework.remoting.rmi.RmiServiceExporter"> 
+		<property name="serviceName" value="servicesGsr" /> 
+		<property name="service">
+			<bean class="eai.devass.gsr.appli.service.impl.ServicesGsr" />
+		</property> 
+		<property name="serviceInterface" value="eai.devass.gsr.appli.service.pub.IServicesGsr" /> 
+		<property name="registry" ref="registry" />
+	</bean>
+	
+	<!-- ============ Services Synchro Sinistre ============= -->
+	<bean class="org.springframework.remoting.rmi.RmiServiceExporter" > 
+		<property name="serviceName" value="synchroniseSinistreAT" /> 
+		<property name="service">
+			<bean class="eai.devass.sinistreat.appli.services.impl.SynchroniseSinistreAT" />
+		</property> 
+		<property name="serviceInterface" value="eai.devass.sinistreat.appli.services.pub.ISynchroniseSinistreAT" /> 
+		<property name="registry" ref="registry" />
+	</bean>
+	
+	<!-- ============ Services recuperation dossier sinistre used by GED AT ============= -->
+	<bean class="org.springframework.remoting.rmi.RmiServiceExporter" > 
+		<property name="serviceName" value="infoDossierSinistre" /> 
+		<property name="service">
+			<bean class="eai.devass.sinistreat.appli.services.impl.RecuperationSinistreAT" />
+		</property> 
+		<property name="serviceInterface" value="eai.devass.sinistreat.appli.services.pub.IRecuperationSinistreService" /> 
+		<property name="registry" ref="registry" />
+	</bean>
+	
+	
+	
+</beans>

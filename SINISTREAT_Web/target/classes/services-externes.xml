@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans classpath:org/springframework/beans/factory/xml/spring-beans-2.0.xsd
+                   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+	<!-- ==================================== RMI Services ================================ -->
+	<context:property-placeholder location="file:///app/conf/sinistreat/config.properties"/>
+
+	<!-- ============ Missionnement ============= -->
+	<bean id="gestionMission" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.missionnement.rmi.url}/gestionMission" />
+		<property name="serviceInterface"
+			value="eai.devass.missionnement.services.pub.IServiceGestionMission" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	<bean id="rechercherMission" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.missionnement.rmi.url}/rechercherMission" />
+		<property name="serviceInterface"
+			value="eai.devass.missionnement.services.pub.IServiceRechercheMission" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	<bean id="servicesMissionnementFacade" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.missionnement.rmi.url}/missionnementServices" />
+		<property name="serviceInterface"
+			value="eai.devass.missionnement.services.pub.IServicesMissionnementFacade" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	<bean id="natureMissionReference" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.missionnement.rmi.url}/natureMissionReference" />
+		<property name="serviceInterface"
+			value="eai.devass.missionnement.services.pub.IServiceNatureMissionReference" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	
+	<bean id="gestionPrestataire" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl" value="rmi://${externe.missionnement.rmi.url}/gestionPrestataire" />
+		<property name="serviceInterface" value="eai.devass.missionnement.services.pub.IServiceGestionPrestataire" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	
+	<!-- ============ Contentieux ============= -->
+	<bean id="serviceCreationContentieux" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+
+		<property name="serviceUrl"
+			value="rmi://${externe.contentieux.rmi.url}/gestionRecours" />
+		<property name="serviceInterface"
+			value="eai.devass.recoursentrant.application.services.pub.IServiceGestionRecoursEntrant" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+
+	<bean id="serviceGestionConvocation" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.contentieux.rmi.url}/gestionConvocation" />
+		<property name="serviceInterface"
+			value="eai.devass.recoursentrant.application.services.pub.IServiceGestionConvocation" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	<bean id="serviceGestionProcedureJudiciaire" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.contentieux.rmi.url}/gestionProcedureJudiciaire" />
+		<property name="serviceInterface"
+			value="eai.devass.recoursentrant.application.services.pub.IServiceGestionProcedureJudiciaire" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	<bean id="serviceGestionJugement" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.contentieux.rmi.url}/gestionJugement" />
+		<property name="serviceInterface"
+			value="eai.devass.recoursentrant.application.services.pub.IServiceGestionJugement" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+
+
+	<!-- ============ Quittance ============= -->
+	<bean id="emissionQuittanceRGL" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl" value="rmi://${externe.quittance.reglement.rmi.url}/emissionQuittanceRGL" />
+		<property name="serviceInterface" value="com.rmawatanya.reglement.application.metier.usecases.services.quittance.IEmissionQuittance" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	
+	<bean id="genererMouvement" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl" value="rmi://${externe.quittance.reglement.rmi.url}/generationMouvementRGL" />
+		<property name="serviceInterface" value="com.rmawatanya.reglement.application.metier.usecases.services.mouvement.IMouvementQuittance" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	
+
+	<bean id="searchQuittanceRGL" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.quittance.reglement.rmi.url}/searchQuittanceRGL" />
+		<property name="serviceInterface"
+			value="com.rmawatanya.reglement.application.metier.usecases.services.quittance.ISearchQuittance" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+
+	<bean id="serviceOrdonnoncement" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.ordonnancement.reglement.rmi.url}/serviceOrdonnoncement" />
+		<property name="serviceInterface"
+			value="com.rmawatanya.moyenpaiement.application.metier.services.ordonnoncement.pub.IServiceOrdonnoncement" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+
+	<bean id="positionnementUC" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.ordonnancement.reglement.rmi.url}/positionnement" />
+		<property name="serviceInterface"
+			value="com.rmawatanya.moyenpaiement.application.metier.usecases.commun.pub.IPositionnementUC" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	
+	<bean id="updatePositionnement" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.ordonnancement.reglement.rmi.url}/updatePositionnement" />
+		<property name="serviceInterface"
+			value="com.rmawatanya.moyenpaiement.application.metier.usecases.commun.pub.IUpdatePositionnement" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	
+	<bean id="recupererSeuil" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl"
+			value="rmi://${externe.ordonnancement.reglement.rmi.url}/recupererSeuilUtilisateur" />
+		<property name="serviceInterface"
+			value="com.rmawatanya.moyenpaiement.application.metier.usecases.commun.pub.IRecupererSeuilUC" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	
+	<!-- Pour la synchronisationd est dossiers sinistre a la BDC via le referentiel  -->
+	<bean id="serviceReferentielSynchroSinistre" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl" value="rmi://${referentiel.host}/referentielDevAssBDC" />
+		<property name="serviceInterface" value="eai.devass.referentiel.services.pub.IReferentielDevAssBDC" />
+		<property name="lookupStubOnStartup">
+			<value>false</value>
+		</property>
+		<property name="refreshStubOnConnectFailure">
+			<value>true</value>
+		</property>
+		<property name="cacheStub">
+			<value>false</value>
+		</property>
+	</bean>
+	
+	<bean id="appelServiceManager" class="eai.devass.services.impl.AppelServiceManager"
+		scope="singleton">
+	</bean>
+
+<!-- <bean id="appelServiceManager" class="eai.devass.services.impl.AppelServiceManager"
+		scope="singleton">
+	</bean> -->	
+
+		<bean id="consulterOrg" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+			<property name="serviceUrl" value="rmi://${RMI_ORG_DY}/consulterOrg" />
+			<property name="serviceInterface"
+				value="com.eai.org.accesseur.services.IConsulterOrg" />
+			<property name="lookupStubOnStartup">
+				<value>false</value>
+			</property>
+			<property name="refreshStubOnConnectFailure">
+				<value>true</value>
+			</property>
+			<property name="cacheStub">
+				<value>false</value>
+			</property>
+		</bean>
+</beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.gsr.appli.modele.metier.reglement">
+	<class name="ModePayement" table="GSR_MODEPAYEMENT">
+		<id name="id" type="long">
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_GSR_MODEPAYEMENT</param>
+			</generator>
+		</id>
+		<property name="idModePayement" column="id_mode_payement" />
+		<property name="description" column="description" />
+		<property name="beneficiaire" column="beneficiaire" />
+		<property name="numeroCIN" column="numero_cin" />
+		<property name="adresse" column="adresse" />
+		<property name="codePostale" column="code_postale" />
+		<property name="ville" column="ville" />
+		<property name="pays" column="pays" />
+		<property name="numeroRIB" column="numero_rib" />
+		<property name="banque" column="banque" />
+		<property name="agenceBancaire" column="agence_bancaire" />
+		<property name="etat" column="etat" />
+		<property name="dateEtat" column="date_etat" />
+		<property name="validation" column="validation" />
+		<property name="dateValidation" column="date_validation" />
+		<property name="dateCreation" column="date_creation" />
+		<property name="virmentOMC" column="VIREMENT_OMC" />
+		<!-- <many-to-one name="refRentier" -->
+		<!-- class="eai.devass.gsr.appli.modele.metier.dossierRente.Rentier" -->
+		<!-- column="GSR_RENTIER" /> -->
+	</class>
+</hibernate-mapping>

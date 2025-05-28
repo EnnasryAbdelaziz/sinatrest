@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.reglement">
+	<class name="LettreReglement" table="SIN_LETTRE_REGLEMENT">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_LETTRE_REGLEMENT</param>
+			</generator>
+		</id>
+		<property name="dateEdition">
+			<column name="DATE_EDITION" />
+		</property>
+		<property name="dateReedition">
+			<column name="DATE_REEDITION" />
+		</property>
+		<property name="typeLettre">
+			<column name="TYPE_LETTRE" />
+		</property>
+		<property name="nbrReedition">
+			<column name="NBR_REEDITION" />
+		</property>
+		<property name="editer">
+			<column name="EDITER" />
+		</property>
+		<property name="rubrique">
+			<column name="RUBRIQUE" />
+		</property>
+		<property name="typeBeneficiaire">
+			<column name="TYPE_BENEFICIAIRE" />
+		</property>
+		<property name="nomBeneficiaire">
+			<column name="NOM_BENEFICIAIRE" />
+		</property>
+		<property name="userCreation">
+			<column name="USER_CREATION" />
+		</property>
+		<property name="dateCreation" >
+			<column name="DATE_CREATION" />
+		</property>
+		<many-to-one name="refReglement" column="REF_REGLEMENT"
+			class="eai.devass.sinistreat.appli.modele.metier.reglement.Reglement"/>
+	</class>
+</hibernate-mapping>

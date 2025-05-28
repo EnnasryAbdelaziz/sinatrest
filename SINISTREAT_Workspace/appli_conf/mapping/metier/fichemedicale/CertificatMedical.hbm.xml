@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="eai.devass.sinistreat.appli.modele.metier.fichemedicale">
+	<class name="CertificatMedical" table="SIN_CERTIFICAT">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_CERTIFICAT</param>
+			</generator>
+		</id>
+		<property name="IPP">
+			<column name="IPP" />
+		</property>
+		<property name="codePrestataire">
+			<column name="CODEPRESTATAIRE" />
+		</property>
+		<property name="provisoireCodePrestataire">
+			<column name="PROVISOIRECODEPRESTATAIRE" />
+		</property>
+
+		<property name="dateCertificat">
+			<column name="DATECERTIFICAT" />
+		</property>
+
+		<property name="nomPrestataire">
+			<column name="NOMPRESTATAIRE" />
+		</property>
+
+		<property name="diagnostique">
+			<column name="DIAGNOSTIQUE" />
+		</property>
+
+		<property name="dateReprise">
+			<column name="DATEREPRISE" />
+		</property>
+
+		<property name="dateDepartITT">
+			<column name="DATEDEPARTITT" />
+		</property>
+
+		<property name="ITT">
+			<column name="ITT" />
+		</property>
+
+		<property name="observation">
+			<column name="OBSERVATION" />
+		</property>
+		<property name="salaireResultat">
+			<column name="SALAIRERESULTAT" />
+		</property>
+		<property name="reserveOrdinaireResultat">
+			<column name="RESERVEORDINAIRERESULTAT" />
+		</property>
+		<property name="reserveGraveResultat">
+			<column name="RESERVEGRAVERESULTAT" />
+		</property>
+		<property name="dateConsultation">
+			<column name="DATECONSULTATION" />
+		</property>
+		<property name="dateCreation">
+			<column name="DATECREATION" />
+		</property>
+		<property name="numeroMission">
+			<column name="NUMEROMISSION" />
+		</property>
+		<property name="valide">
+			<column name="VALIDE" />
+		</property>
+		<!-- AZAS -->
+		<property name="dateGuerison">
+			<column name="DATEGUERISON" />
+		</property>
+		<property name="dateReception">
+			<column name="DATERECEPTION" />
+		</property>
+		<many-to-one name="refSinistre" column="REFSINISTRE"
+			class="eai.devass.sinistreat.appli.modele.metier.sinistre.Sinistre"
+			fetch="join" not-found="ignore" />
+		<many-to-one name="refType" column="TYPECERTIFICAT"
+			class="eai.devass.sinistreat.appli.modele.parametrage.TypeCertificat"
+			fetch="join" not-found="ignore" lazy="false" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="eai.devass.sinistreat.appli.modele.metier.conciliation">
+	<class name="SinAnterieurOffre" table="SIN_ANTERIEUR_OFFRE">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_SIN_ANTERIEUR_OFFRE</param>
+			</generator>
+		</id>
+
+		<property name="numeroSinistre">
+			<column name="NUMEROSINISTRE" />
+		</property>
+
+		<property name="dateAccident">
+			<column name="dateAccident" />
+		</property>
+
+		<property name="tauxIPP">
+			<column name="tauxIPP" />
+		</property>
+		
+		<many-to-one name="refOffre" column="REF_OFFRE"
+			class="eai.devass.sinistreat.appli.modele.metier.conciliation.Offre"
+			fetch="join" not-found="ignore" />
+	</class>
+</hibernate-mapping>

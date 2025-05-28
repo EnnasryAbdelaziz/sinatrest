@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.recours">
+	<class name="RecoursAmiable" table="SIN_RECOURS_AMIABLE">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_RECOURSAMIABLE</param>
+			</generator>
+		</id>
+		<property name="dateProposition">
+			<column name="DATEPROPOSITION" />
+		</property>
+		<property name="deboursLoiReclame">
+			<column name="DEBOURSLOIRECLAME" />
+		</property>
+		<property name="dateReponse">
+			<column name="DATEREPONSE" />
+		</property>
+		<property name="commentaire">
+			<column name="COMMENTAIRE" />
+		</property>
+		<property name="montantQuitance">
+			<column name="MONTANTQUITANCE" />
+		</property>
+		<property name="numeroQuittance">
+			<column name="NUMEROQUITANCE" />
+		</property>
+		<property name="dateQuittance">
+			<column name="DATEQUITANCE" />
+		</property>
+		<property name="numeroRemise">
+			<column name="NUMEROREMISE" />
+		</property>
+		<property name="montantRemise">
+			<column name="MONTANTREMISE" />
+		</property>
+		<property name="dateRecuperation">
+			<column name="DATERECUPERATION" />
+		</property>
+		<property name="modeRecuperation">
+			<column name="MODERECUPERATION" />
+		</property>
+		<property name="numeroCheque">
+			<column name="NUMEROCHEQUE" />
+		</property>
+		<property name="decisionSurRejet">
+			<column name="DECISIONSURREJET" />
+		</property>
+		<property name="motifAnnulation">
+			<column name="MOTIFANNULATION" />
+		</property>
+		<many-to-one name="refRecours" column="IDRECOURS"
+			class="eai.devass.sinistreat.appli.modele.metier.contentieux.Recours" />
+		<many-to-one name="refEtatProposition" column="ETATPROPOSTITION"
+			class="eai.devass.sinistreat.appli.modele.parametrage.EtatProposition" />
+		<many-to-one name="refEtatReponse" column="ETATREPONSE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.EtatReponse" />
+		<many-to-one name="refPartageResponsablite" column="PARTAGERESPONSABILITE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.PronosticRC" />
+		<many-to-one name="refDecision" column="DECISION"
+			class="eai.devass.sinistreat.appli.modele.parametrage.DecisionRecoursAmiable" />
+		<many-to-one name="refBanque" column="CODEBANQUE"
+			class="eai.devass.sinistreat.appli.modele.parametrage.Banque" />
+	</class>
+</hibernate-mapping>

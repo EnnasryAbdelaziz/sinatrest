@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.sinistreat.appli.modele.metier.mission">
+	<class name="MissionPresation" table="SIN_PRESATION_MISSION">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_MISSIONPRESTATION</param>
+			</generator>
+		</id>
+		<property name="montantFacture">
+			<column name="MONTANTFACTURE" />
+		</property>
+		<property name="montantPaye">
+			<column name="MOTANTAPAYE" />
+		</property>
+
+		<many-to-one name="refMission" column="IDMISSION"
+			class="eai.devass.sinistreat.appli.modele.metier.mission.MissionAT" />
+		<many-to-one name="refPrestation" column="PRESATION"
+			class="eai.devass.sinistreat.appli.modele.parametrage.PrestationMission" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="eai.devass.sinistreat.appli.modele.metier.conciliation">
+	<class name="Convocation" table="SIN_CONVOCATION">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_SIN_CONVOCATION</param>
+			</generator>
+		</id>
+				
+		<property name="dateConvocation">
+			<column name="DATE_CONVOCATION" />
+		</property>
+		
+		<property name="dateVisite">
+			<column name="DATE_VISITE" />
+		</property>
+
+		<property name="dateCreation">
+			<column name="DATE_CREATION" />
+		</property>
+		<property name="dateModification">
+			<column name="DATE_MODIFICATION" />
+		</property>
+			
+		<many-to-one name="refConciliation" column="ID_CONCILIATION"
+		class="eai.devass.sinistreat.appli.modele.metier.conciliation.Conciliation" />
+
+		<many-to-one name="refMotifConvocation" column="REF_MOTIFCONVOCATION" fetch="join" 
+		not-found="ignore" class="eai.devass.sinistreat.appli.modele.parametrage.MotifConvocation" />
+
+</class>
+</hibernate-mapping>

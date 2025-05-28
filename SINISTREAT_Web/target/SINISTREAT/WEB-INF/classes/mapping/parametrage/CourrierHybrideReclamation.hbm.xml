@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 sept. 2009 15:38:55 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="eai.devass.sinistreat.appli.modele.parametrage.CourrierHybrideReclamation" table="SIN_COURRIER_LRH_RECLAMATION">
+	      <id name="idLRH" >
+	         <column name="IDLRH" />
+	      </id>
+	    <property name="numeroSinistre">
+            <column name="NUMEROSINISTRE" />
+        </property>
+        <property name="numeroGrave">
+            <column name="NUMEROGRAVE" />
+        </property>    
+        <property name="nomClient">
+            <column name="NOMCLIENT" />
+        </property>  
+        <property name="dateAccident">
+            <column name="DATEACCIDENT" />
+        </property>
+         <property name="dateCreation">
+            <column name="DATECREATION" />
+        </property>
+        <property name="nomBeneficiaireLettre">
+            <column name="NOMBENEFICIAIRELETTRE" />
+        </property>
+         <property name="nomVictime">
+            <column name="NOMVICTIME" />
+        </property>
+         <property name="villeBeneficiaireLettre">
+            <column name="VILLEBENEFICIAIRELETTRE" />
+        </property> 
+        <property name="piece">
+            <column name="PIECE" />
+        </property>   
+        <property name="vRef">
+            <column name="VREF" />
+        </property> 
+        <property name="gsm">
+            <column name="GSM" />
+        </property> 
+        <property name="dateGeneration">
+            <column name="DATEGENERATION" />
+        </property> 
+       <property name="nomUserCreateur">
+            <column name="NOMUSERCREATEUR" />
+        </property> 
+        <property name="adressBeneficiaireLettre">
+            <column name="ADRESSBENEFICIAIRELETTRE" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

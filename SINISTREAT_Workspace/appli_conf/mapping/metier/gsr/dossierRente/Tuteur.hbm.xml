@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernate XML Mapping File -->
+<!-- Author: Administrateur -->
+<!-- Modified: lundi 4 octobre 2010 10:12:50 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="eai.devass.gsr.appli.modele.metier.dossierRente" >
+   <class name="Tuteur" table="GSR_TUTEUR" >
+     <id name="id">
+				<column name="ID" />
+				<generator class="sequence">
+					<param name="sequence">SEQ_TUTEUR</param>
+				</generator>
+			</id>
+			<property name="idTuteur" column="id_tuteur" />
+			<property name="nom" column="nom" />
+			<property name="numeroCIN" column="numero_cin" />
+			<property name="lienParente" column="lien_parente" />
+			<property name="adresse" column="adresse" />
+			<property name="codePostale" column="code_postale" />
+			<property name="ville" column="ville" />
+			<property name="pays" column="pays" />
+			<property name="etat" column="etat" />
+			<property name="dateEtat" column="date_etat" />
+			<property name="validation" column="validation" />
+			<property name="dateValidation" column="date_validation" />
+			<property name="prenom" column="prenom" />
+			<property name="sexe" column="sexe" />
+			<property name="dateCreation" column="date_creation" />
+			<property name="deleted" column="DELETED" />			
+   </class>
+</hibernate-mapping>

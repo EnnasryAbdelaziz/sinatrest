@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="eai.devass.edition.modele" auto-import="false">
+	<class name="RecapColonne" table="SIN_RECAP_COLONNE">
+
+		
+		<id name="id" type="long">
+			<column name="ID" precision="22" scale="0" />
+			<generator class="increment" />
+		</id>
+		<property name="name" column="NAME" />
+		<property name="calculation" column="CALCULATION" />
+		
+		<many-to-one name="refChamp"
+			class="eai.devass.edition.modele.Champ"
+			column="ID_CHAMP" lazy="false" />
+		
+	</class>
+</hibernate-mapping>

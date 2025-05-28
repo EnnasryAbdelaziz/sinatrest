@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib
+            PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" 
+            "http://java.sun.com/j2ee/dtds/web-jsptaglib_1_1.dtd">
+
+
+<taglib>
+    <!-- The version number of this tag library -->
+    <tlibversion>1.0</tlibversion>
+
+    <!-- The JSP specification version required to function -->
+    <jspversion>1.1</jspversion>
+
+    <!-- The short name of this tag library -->
+    <shortname>utility</shortname>
+
+  
+
+    <!-- General information about this tag library -->
+    <info>
+          A simple tag library for the examples
+    </info>
+
+  	<!-- Menu tag -->
+	<tag>
+	    <name>simulation</name>
+	    <tagclass>com.rmawatanya.quittancement.application.simulation.ihm.TagIhm</tagclass>
+	    <info>
+	     	Print Menu Utilisateur
+	    </info>
+	</tag>
+	
+	<!-- Info user tag -->
+	<tag>
+	    <name>user</name>
+	    <tagclass>ma.gov.bkam.cotationMAD.authorization.pl.TagUser</tagclass>
+	    <info>
+	     	Print User Name
+	    </info>
+	</tag>
+  
+</taglib>
