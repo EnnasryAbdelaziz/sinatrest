@@ -33,6 +33,7 @@ import eai.devass.sinistreat.appli.utils.entites.IParam;
 import eai.devass.sinistreat.appli.valueobjects.metier.ListVO;
 import eai.devass.sinistreat.appli.valueobjects.metier.contentieux.PartieAdverseJudVO;
 import eai.devass.sinistreat.appli.valueobjects.metier.contentieux.ProcedureJudiciaireVO;
+import eai.devass.sinistreat.appli.valueobjects.metier.instruction.InstructionPieceAtVO;
 import eai.devass.sinistreat.appli.valueobjects.metier.instruction.InstructionVO;
 import eai.devass.sinistreat.appli.valueobjects.metier.reglement.DetailReglementVO;
 import eai.devass.sinistreat.appli.valueobjects.metier.reglement.ReglementVO;
@@ -55,7 +56,7 @@ import ma.co.omnidata.framework.services.dao.IPersistenceService;
 import ma.co.omnidata.framework.services.securite.impl.OMNIAction;
 
 @Path("searchSinistre")
-public class SinistreController {
+public class RechercheSinistreController {
 	
 	private static Logger logger = Logger.getLogger("loggerSINAT");
 	
@@ -282,6 +283,53 @@ public List<SinistreVO> searchSinistre(SinistreVO sinistre) throws JsonProcessin
 	 return list;
 	
 }
+
+	@Path("/rechercheQuittance")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	@POST
+	/* @CrossOrigin */
+	public List<ReglementVO> rechercheQuittance(ReglementVO reg) throws JsonProcessingException {
+
+		logger.info("Appel methode recherche quittance avec post method -> Begin");
+		List<ReglementVO> list = new ArrayList<ReglementVO>();
+		try {
+			//OMNIFacade facade = new OMNIFacade();
+			OMNIAction action = new OMNIAction();
+			OMNIFacade facade = new OMNIFacade();
+
+			action.setActionId("300");
+			HashMap params = new HashMap();
+			PagerVO pager = new PagerVO();
+			pager.setNumPage("1");
+			pager.setPageSize("20");
+			params.put(IParam.PAGER, pager);
+			IResult resultat = facade.invokeService(null, action, reg, params);
+			if(resultat != null && resultat.getValueObject() != null){
+				HashMap map = new HashMap();
+				map = (HashMap) resultat.getValueObject();
+				list = (List<ReglementVO>) map.get("listReglementVO");
+//             ObjectMapper mapper = new ObjectMapper();
+//
+//                 String json = mapper.writeValueAsString(list);
+//                 System.out.println("ResultingJSONstring = " + json);
+//                 out.print(json);
+				//System.out.println(json);
+
+
+				// bytes = (byte[]) ((ArrayList) resultat.getValueObject()).get(0);
+				//list = (List<SinistreVO>) resultat.getValueObject();
+			}
+
+		} catch (Exception e) {
+			//logger.error("probl�me technique",e);
+		}
+
+		logger.info("Appel methode recherche Quittance -> Fin");
+
+		return list;
+
+	}
        
        @Path("/create")       
 	   @Produces(MediaType.APPLICATION_JSON)
@@ -354,11 +402,14 @@ public SinistreVO createSinistre(SinistreVO sinistre) throws JsonProcessingExcep
       			if (resultat != null && resultat.getValueObject() != null) {
       		//		HashMap map = new HashMap();
       				map = (HashMap) resultat.getValueObject();
-      				
+					System.out.println("ResultingJSONstring = ");
+					System.out.println("ResultingJSONstring = ");
+
       			}
 
       		} catch (Exception e) {
       			 logger.error("probl�me technique",e);
+
       		}
       		
       		return map;
@@ -538,49 +589,58 @@ public SinistreVO createSinistre(SinistreVO sinistre) throws JsonProcessingExcep
    
         
         
-@Path("/createInstruction")       
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
-@POST
- public InstructionVO createInstruction(InstructionVO instr) throws JsonProcessingException {
- 	
-     logger.info("Appel methode creation Instruction avec post method -> Begin");
- 	InstructionVO instResult = new InstructionVO();
- 	try {
- 		//OMNIFacade facade = new OMNIFacade();
- 		IPersistenceService dao = (IPersistenceService) ServicesFactory.getService(IPersistenceService.class);
-		Session sess=  (Session) dao.newSession();
- 		
- 		SinistreManager sinistreManager = (SinistreManager) ServicesFactory.getService(SinistreManager.class);
- 		sinistreManager.setSession(sess);
+        @Path("/createInstruction")       
+        @Produces(MediaType.APPLICATION_JSON)
+        @Consumes(MediaType.APPLICATION_JSON)
+        @POST
+         public InstructionVO createInstruction(InstructionVO instr) throws JsonProcessingException {
+         	
+             logger.info("Appel methode creation Instruction avec post method -> Begin");
+         	InstructionVO instResult = new InstructionVO();
+         	try {
+         		//OMNIFacade facade = new OMNIFacade();
+         		/*
+         		IPersistenceService dao = (IPersistenceService) ServicesFactory.getService(IPersistenceService.class);
+        		Session sess=  (Session) dao.newSession();
+         		
+         		SinistreManager sinistreManager = (SinistreManager) ServicesFactory.getService(SinistreManager.class);
+         		sinistreManager.setSession(sess);
 
- 		Sinistre sin = sinistreManager.getSinistreForGedByNumQuery(instr.getSinistre().getNumeroSinistre());
- 		instr.getSinistre().setId(String.valueOf(sin.getId()));
- 		OMNIAction action = new OMNIAction();
- 		OMNIFacade facade = new OMNIFacade();
- 		 action.setActionId("10");
- 		 HashMap params = new HashMap();
- 		 
- 		 IResult resultat = facade.invokeService(null, action, instr, params);
- 		 if(resultat != null && resultat.getValueObject() != null){
- 			 HashMap map = new HashMap();
-              //map = (HashMap) resultat.getValueObject();
-              instResult = (InstructionVO) resultat.getValueObject();
- 		 }
- 		
- 	} catch (Exception e) {
- 		//logger.error("probl�me technique",e);
- 	}
- 		 ObjectMapper mapper = new ObjectMapper();
+         		Sinistre sin = sinistreManager.getSinistreForGedByNumQuery(instr.getSinistre().getNumeroSinistre());
+         		instr.getSinistre().setId(String.valueOf(sin.getId()));
+         		*/
+         		OMNIAction action = new OMNIAction();
+         		OMNIFacade facade = new OMNIFacade();
+         		
+         		ObjectMapper objectMapper = new ObjectMapper();
+         		
+         		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+         		List<InstructionPieceAtVO> listeinstructionPieceAt= objectMapper.convertValue(instr.getInstructionPieceAt(), new TypeReference<List<InstructionPieceAtVO>>() {});
+         		instr.setInstructionPieceAt(listeinstructionPieceAt);
+         		 action.setActionId("10");
+         		 HashMap params = new HashMap();
+         		 
+         		 IResult resultat = facade.invokeService(null, action, instr, params);
+         		 if(resultat != null && resultat.getValueObject() != null){
+         			 HashMap map = new HashMap();
+                      //map = (HashMap) resultat.getValueObject();
+                      instResult = (InstructionVO) resultat.getValueObject();
+         		 }
+         		
+         	} catch (Exception e) {
+         		//logger.error("probl�me technique",e);
+         	}
+         		 ObjectMapper mapper = new ObjectMapper();
 
-           String json = mapper.writeValueAsString(instResult);
-           System.out.println("ResultingJSONstring = " + json);
- 		   logger.info("Appel methode recherche sinistre -> Fin");
+                   String json = mapper.writeValueAsString(instResult);
+                   System.out.println("ResultingJSONstring = " + json);
+         		   logger.info("Appel methode recherche sinistre -> Fin");
 
- 	 
- 	return instResult;
- 	
- }
+         	 
+         	return instResult;
+         	
+         }
+
 
 
 @Path("/createProcedure")       
@@ -1086,12 +1146,15 @@ public ReglementVO createRegAuxiliaire(ReglementVO reg, @HeaderParam(value = "us
   		return map;
   	}
     
+    
+    
+    
     @Path("validateListSinistre")
   	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
   	@POST
-  	public ArrayList validateListSinistre(List<SinistreVO> listSin) {
-    	ArrayList map= new ArrayList<>();
+  	public ArrayList validerListSinistre(List<SinistreVO> listSinistres) {
+		ArrayList res = new ArrayList<>();
   		try {
   			// OMNIFacade facade = new OMNIFacade();
   			OMNIAction action = new OMNIAction();
@@ -1099,73 +1162,48 @@ public ReglementVO createRegAuxiliaire(ReglementVO reg, @HeaderParam(value = "us
   			HashMap params = new HashMap();
   			action.setActionId("110");
   			
-  			ListVO listsinvo = new ListVO();
-  			listsinvo.setListSinistre(listSin);
+  			ListVO listSins = new ListVO();
+  			listSins.setListSinistre(listSinistres);
   			
-  			IResult resultat = facade.invokeService(null, action, listsinvo, params);
+  			IResult resultat = facade.invokeService(null, action, listSins, params);
   			if (resultat != null && resultat.getValueObject() != null) {
-  	            map = (ArrayList) resultat.getValueObject();
+  				res = (ArrayList) resultat.getValueObject();
 //  	            listRgl = (List<ReglementVO>) map.get("listReglementVO"); 
 //  	            System.out.println("listRgl :"+listRgl.size());
   			}
 
   		} catch (Exception e) {
-  			 logger.error("probleme technique",e);
+  			 logger.error("probl�me technique",e);
   		}
-  		return map;
+  		return res;
   	}
-    
-    
-    @Path("/rechercheQuittance")       
-	@Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    @POST
-    public List<ReglementVO> searchQuittance(ReglementVO reg) throws JsonProcessingException {
-    	
-        logger.info("Appel methode recherche qittance avec post method -> Begin");
-    	List<ReglementVO> list = new ArrayList<ReglementVO>();
-    	try {
-    		//OMNIFacade facade = new OMNIFacade();
-    		 OMNIAction action = new OMNIAction();
-    			OMNIFacade facade = new OMNIFacade();
 
-    		 action.setActionId("300");
-    		 HashMap params = new HashMap();
-    		 PagerVO pager = new PagerVO();
-    		 pager.setNumPage("1");
-    		 pager.setNbrLignes("1");
-    		 pager.setPageSize("20");
-    		 params.put(IParam.PAGER, pager);
-    		 IResult resultat = facade.invokeService(null, action, reg, params);
-    		 if(resultat != null && resultat.getValueObject() != null){
-    			 HashMap map = new HashMap();
-                 map = (HashMap) resultat.getValueObject();
-                 list = (List<ReglementVO>) map.get("listReglementVO");
-//                 ObjectMapper mapper = new ObjectMapper();
-//                 
-//                     String json = mapper.writeValueAsString(list);
-//                     System.out.println("ResultingJSONstring = " + json);
-//                     out.print(json);
-                     //System.out.println(json);
-                
-                 
-    			// bytes = (byte[]) ((ArrayList) resultat.getValueObject()).get(0);
-    			 //list = (List<SinistreVO>) resultat.getValueObject();
-    		 }
-    		
-    	} catch (Exception e) {
-    		//logger.error("probl�me technique",e);
-    	}
-//    		 ObjectMapper mapper = new ObjectMapper();
+    @Path("getParamsInstruction")
+   	@Produces(MediaType.APPLICATION_JSON)
+   	@GET
+   	public Map getParamsInstruction() {
+ 		Map map= new HashMap();
+ 		InstructionVO vo = new InstructionVO();
+   		try {
+   			// OMNIFacade facade = new OMNIFacade();
+   			OMNIAction action = new OMNIAction();
+   			OMNIFacade facade = new OMNIFacade();
+   			HashMap params = new HashMap();
+   			action.setActionId("14");
+   			IResult resultat = facade.invokeService(null, action, vo, params);
+   			if (resultat != null && resultat.getValueObject() != null) {
+   		//		HashMap map = new HashMap();
+   				map = (HashMap) resultat.getValueObject();
+   				
+   			}
 
-//              String json = mapper.writeValueAsString(list);
-//              System.out.println("ResultingJSONstring = " + json);
-              System.out.println("ResultingJSONstring = " + list.size());
-    		   logger.info("Appel methode recherche quittance -> Fin");
-
-    	 return list;
-    	
-    }
+   		} catch (Exception e) {
+   			 logger.error("problï¿½me technique",e);
+   		}
+   		
+   		return map;
+   		
+   	}
         
         
 }	
