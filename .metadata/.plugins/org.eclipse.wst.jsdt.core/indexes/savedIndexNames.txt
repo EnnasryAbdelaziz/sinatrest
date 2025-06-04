@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\Users\ENNARY Abdelaziz\Desktop\MS-SINAT\gitreposinat\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+116702361.index
+543919702.index
+1923465024.index
+1024193393.index
+1507897839.index
