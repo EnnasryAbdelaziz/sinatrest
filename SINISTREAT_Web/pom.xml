@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>SINISTREAT_Build</artifactId>
+		<groupId>eai.devass.atsinistre</groupId>
+		<version>1.0</version>
+		<relativePath>../SINISTREAT_Build/pom.xml</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+    <artifactId>SINISTREAT_Web</artifactId>
+    <packaging>war</packaging> 
+    <name>Web</name>
+	<version>${appVersion}</version>     
+  	<build>
+<!--   		<directory>C:\tomcat-5.5.27\webapps</directory> -->
+<!--		<directory>target</directory>-->
+		<outputDirectory>target/classes</outputDirectory>
+		<finalName>SINISTREAT</finalName>
+<!--		<finalName>${project.artifactId}-${project.version}</finalName>-->
+		<testOutputDirectory>target/test-classes</testOutputDirectory>
+		<sourceDirectory>src</sourceDirectory>
+		
+		<resources>
+			<resource>
+				<directory>../SINISTREAT_Workspace/appli_conf</directory>
+			</resource>
+		</resources>
+		<pluginManagement>
+		<plugins>
+		    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warSourceDirectory>WebRoot</warSourceDirectory>
+					<webXml>WebRoot/WEB-INF/web.xml</webXml>
+				</configuration>
+			</plugin>		
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		</pluginManagement>
+	</build>
+ 	
+   	<dependencies>
+			     
+		<dependency>
+			 <groupId>eai.devass.atsinistre</groupId>
+			 <artifactId>SINISTREAT_Appli</artifactId>
+			 <version>${appVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>eai.devass.atsinistre</groupId>
+			<artifactId>SINISTREAT_COMMUN</artifactId>
+			<version>${appVersion}</version>
+						
+		</dependency>
+		
+		<dependency>
+			<groupId>eai.devass.atsinistre</groupId>
+			<artifactId>SINISTREAT_Workspace</artifactId>
+			<version>${appVersion}</version>
+					
+		</dependency>
+		
+			
+				        
+  	</dependencies>
+  	
+  <!--  	<profiles>
+		<profile>
+			<id>REC</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<resources>
+					<resource>
+						<directory>../SINISTREAT_Workspace/appli_confREC</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>DEV</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<resources>
+					<resource>
+						<directory>../SINISTREAT_Workspace/appli_confDEV</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>PROD</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<resources>
+					<resource>
+						<directory>../SINISTREAT_Workspace/appli_confPROD</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>PREPROD</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<defaultGoal>install</defaultGoal>
+				<resources>
+					<resource>
+						<directory>../SINISTREAT_Workspace/appli_confPREPROD</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		
+	</profiles>-->
+  	
+  	
+   
+</project>
