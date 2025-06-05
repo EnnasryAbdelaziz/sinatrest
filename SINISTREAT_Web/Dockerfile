@@ -1,6 +1,6 @@
 #FROM tomcat:8.5.81-jre8-openjdk-slim-bullseye
 #FROM tomcat:6.0.53
-FROM tomcat:7.0.99
+FROM docker.io/tomcat:7.0.99
 COPY ./target/SINISTREAT.war /usr/local/tomcat/webapps/
 COPY ./xml-apis-1.4.01.jar /usr/local/tomcat/lib/
 COPY ./ojdbc6-1.1.jar /usr/local/tomcat/lib/
