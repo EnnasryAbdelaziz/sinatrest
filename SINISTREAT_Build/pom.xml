@@ -9,6 +9,7 @@
 	<name>parent build</name>
 	<properties>
 		<appVersion>1.0.0</appVersion>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
 		<pluginManagement>
