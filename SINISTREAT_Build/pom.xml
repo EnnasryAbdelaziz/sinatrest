@@ -20,7 +20,7 @@
 					<configuration>
 						<source>1.8</source>
 						<target>1.8</target>
-						<propertiesEncoding>UTF-8</propertiesEncoding>
+						<propertiesEncoding>Cp1252</propertiesEncoding>
 					</configuration>
 				</plugin>
 			</plugins>
