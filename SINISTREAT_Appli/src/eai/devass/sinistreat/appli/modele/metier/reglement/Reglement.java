@@ -201,20 +201,12 @@ public class Reglement {
 	private String typeUtilisateurConnecte;
 	private String nbRelance;
 	private Double montantRAS;
-	private String ras;
 	private Boolean isComplement = Boolean.FALSE;
 	private String actionPreQuitt;
 	private String zoneARisque;
 	private Boolean regler ;
 	private List<ReglementPieceAt> reglementPieceAt;
 
-	public String getRas() {
-		return ras;
-	}
-
-	public void setRas(String ras) {
-		this.ras = ras;
-	}
 	public List<ReglementPieceAt> getReglementPieceAt() {
 		return reglementPieceAt;
 	}
