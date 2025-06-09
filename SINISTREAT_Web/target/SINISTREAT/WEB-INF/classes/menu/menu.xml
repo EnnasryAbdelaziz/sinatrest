@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<menu>	 
-    <menuEntry id="sinistre" label="Sinistre" link="" permission="1" onClick="" src="">		
-			<subMenu id="Sinistre" link="habMenuAction.do?forward=sinistre:rechercheSinistre" label="Recherche Sinistre" permission="2"  onClick="" src=""></subMenu>
-			
-	</menuEntry>	
-</menu>
