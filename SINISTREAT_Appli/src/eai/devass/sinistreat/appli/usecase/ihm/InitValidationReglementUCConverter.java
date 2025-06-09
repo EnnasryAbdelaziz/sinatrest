@@ -61,7 +61,7 @@ public class InitValidationReglementUCConverter extends ValueObjectConverterAbst
 					"refTypeReglement.code", "refTypeReglement.libelle",
 					"refSinistre.numeroSinistre", "listDetailReglement",
 					"idOrdonnancement","service", "refSinistre.numeroGrave", 
-                    "refSinistre.refVictime.nomprenom","refSinistre.refVictime.id",
+                    "refSinistre.refVictime.nomprenom",
                     "refSinistre.nomClient",
                     "refSinistre.refEvenement.dateAccident",
                     "refSinistre.refVictime.salaireMensuel",
