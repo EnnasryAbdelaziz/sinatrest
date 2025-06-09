@@ -209,7 +209,6 @@ public class ReglementRG {
 		}
 		try {
 			if (!this.reglement.isInstancePositionnement()) {
-				System.out.println("emisssion");
 				this.emissionQuittanceService(this.reglement);
 				if (positionnement || positionnementBGD || this.reglement.getModeReglement().equals("2")) {
 					this.reglementDB.setRefEtatReglement(new EtatRgl("7"));
