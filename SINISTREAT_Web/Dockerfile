@@ -1,5 +1,5 @@
 #FROM tomcat:8.5.81-jre8-openjdk-slim-bullseye
-#FROM tomcat:6.0.53
+#FROM tomcat:6.0.53 test
 FROM docker.io/tomcat:7.0.99
 COPY ./SINISTREAT_Web/target/SINISTREAT.war /usr/local/tomcat/webapps/
 COPY ./SINISTREAT_Web/xml-apis-1.4.01.jar /usr/local/tomcat/lib/
