@@ -58,8 +58,7 @@ public class RechercheReglementBisUCConverter extends ValueObjectConverterAbst
 									"codeMandataire", "villeBenef","numeroBordereau",
 									"adresseBenef", "referenceAuxiliaire",
 									"dateNote", "numeroMission", "dateSignature", "refBanque.code", "Emission", "service", "Etablissement", 
-									"nomBeneficiaireLettre", "typeBeneficiaireLettre", "dateReception", "refProcedure", "salaireMensuel", "renteAnnuelle", "dateProchaineEcheance","rappel", "smig", "creatorFirstQtc","emissionITT", "listFraisMedicaux","adresseBeneficiaireLettre","villeBeneficiaireLettre", "codeIntermediaireBL", "codePrestataireBL","nomDestinataireCheque", "typeDestinataireCheque","adresseDestinataireCheque",
-									"villeDestinataireCheque","codePrestataireDC","codeIntermediaireDC","zoneARisque","ras","montantRAS"});
+									"nomBeneficiaireLettre", "typeBeneficiaireLettre", "dateReception", "refProcedure", "salaireMensuel", "renteAnnuelle", "dateProchaineEcheance","rappel", "smig", "creatorFirstQtc","emissionITT", "listFraisMedicaux","adresseBeneficiaireLettre","villeBeneficiaireLettre", "codeIntermediaireBL", "codePrestataireBL","nomDestinataireCheque", "typeDestinataireCheque","adresseDestinataireCheque","villeDestinataireCheque","codePrestataireDC","codeIntermediaireDC","zoneARisque"});
 					List listReglementvo = (List) converterTools
 							.convertToListObjectVO(listReglement);
 					if (listReglementvo != null && !listReglementvo.isEmpty()) {

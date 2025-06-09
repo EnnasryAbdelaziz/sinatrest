@@ -5,14 +5,11 @@ import java.util.List;
 import ma.co.omnidata.framework.services.businessInterface.IValueObject;
 
 import org.apache.commons.lang.StringUtils;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import eai.devass.commun.appli.converter.AConverter;
 import eai.devass.sinistreat.appli.valueobjects.parametrage.PaysVO;
 import eai.devass.sinistreat.appli.valueobjects.parametrage.TypeMaladieVO;
 import eai.devass.sinistreat.appli.valueobjects.parametrage.VilleVO;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class VictimeVO  implements IValueObject  {
 

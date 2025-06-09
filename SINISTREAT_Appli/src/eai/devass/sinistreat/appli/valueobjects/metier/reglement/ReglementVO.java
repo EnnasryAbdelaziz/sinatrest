@@ -2,6 +2,8 @@ package eai.devass.sinistreat.appli.valueobjects.metier.reglement;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 import ma.co.omnidata.framework.services.businessInterface.IValueObject;
 import eai.devass.sinistreat.appli.valueobjects.metier.sinistre.SinistreVO;
 import eai.devass.sinistreat.appli.valueobjects.parametrage.BanqueVO;
@@ -9,6 +11,8 @@ import eai.devass.sinistreat.appli.valueobjects.parametrage.EtatRglVO;
 import eai.devass.sinistreat.appli.valueobjects.parametrage.NatureRecuperationVO;
 import eai.devass.sinistreat.appli.valueobjects.parametrage.TypeQuittanceVO;
 import eai.devass.sinistreat.appli.valueobjects.parametrage.TypeReglementVO;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class ReglementVO implements IValueObject {
 	private String id;
@@ -148,16 +152,6 @@ public class ReglementVO implements IValueObject {
 	private String isComplement;
 	private String regler;
     private List reglementPieceAt;
-    private String ras;
-    
-    
-	public String getRas() {
-		return ras;
-	}
-
-	public void setRas(String ras) {
-		this.ras = ras;
-	}
 
 	
 	public List getReglementPieceAt() {

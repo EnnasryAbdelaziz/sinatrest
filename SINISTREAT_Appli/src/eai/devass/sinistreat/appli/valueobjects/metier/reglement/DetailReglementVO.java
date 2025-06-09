@@ -1,8 +1,12 @@
 package eai.devass.sinistreat.appli.valueobjects.metier.reglement;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 import ma.co.omnidata.framework.services.businessInterface.IValueObject;
 
 /** kchakib : 21/05/2009 */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class DetailReglementVO implements IValueObject {
 	private static final long serialVersionUID = 0xac68a65771271ac0L;

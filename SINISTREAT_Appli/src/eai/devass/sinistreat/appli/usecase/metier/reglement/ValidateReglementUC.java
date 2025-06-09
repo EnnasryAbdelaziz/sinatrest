@@ -109,7 +109,6 @@ public class ValidateReglementUC extends BaseUC {
 				tx.commit();
 				session.clear();
 				listErrors.addAll(reglementRG.getListErrors());
-				
 			}
 		
 		} catch(Exception e) {
