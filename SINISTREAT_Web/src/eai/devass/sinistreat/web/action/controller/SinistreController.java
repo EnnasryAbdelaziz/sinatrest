@@ -56,7 +56,7 @@ import ma.co.omnidata.framework.services.dao.IPersistenceService;
 import ma.co.omnidata.framework.services.securite.impl.OMNIAction;
 
 @Path("searchSinistre")
-public class RechercheSinistreController {
+public class SinistreController {
 	
 	private static Logger logger = Logger.getLogger("loggerSINAT");
 	
